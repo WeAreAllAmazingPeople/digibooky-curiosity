@@ -1,2 +1,2 @@
 # digibooky-curiosity
-Digibooky project by team Cusriosity
+Digibooky project by team Curiosity
