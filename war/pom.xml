@@ -16,6 +16,10 @@
             <groupId>com.switchfully.curiosity</groupId>
             <artifactId>api</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
