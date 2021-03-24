@@ -1,11 +1,5 @@
 # Digibooky - Team Curiosity
 
-[![Build Status](https://api.travis-ci.com/nielshendrickx/switchfully-DigiBooky.svg)](https://travis-ci.com/github/nielshendrickx/switchfully-DigiBooky)
-[![codecov](https://codecov.io/gh/nielshendrickx/switchfully-DigiBooky/branch/master/graph/badge.svg)](https://codecov.io/gh/nielshendrickx/switchfully-DigiBooky)
-[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=nielshendrickx_switchfully-DigiBooky&metric=alert_status)](https://sonarcloud.io/dashboard/index/nielshendrickx_switchfully-DigiBooky)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-
 Digibooky is going to revolutionize the classic libraries. Users will come to the VR offices where VR headsets are available. 
 Using these VR headsets, users can roam Digibooky's digital library, where they can make their preferred selection of books to borrow.
 
