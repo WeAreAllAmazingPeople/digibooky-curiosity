@@ -4,6 +4,6 @@ import com.switchfully.curiosity.digibooky.domain.entities.books.Book;
 
 import java.util.Collection;
 
-public interface Database {
+public interface BookDatabase {
     Collection<Book> getAllBooks();
 }

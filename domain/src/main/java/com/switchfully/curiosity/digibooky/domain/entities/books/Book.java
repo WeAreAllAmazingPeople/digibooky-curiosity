@@ -5,7 +5,7 @@ import java.util.UUID;
 public class Book {
     private final UUID id;
     private final String ISBN;     //TODO make value object with ISBN
-    private final Author author;     //QUESTION sir Karl, should author be a Collection?
+    private final Author author;
     private final String title;
     private final String summary;     //QUESTION summary of book story or infos?
 
@@ -28,5 +28,9 @@ public class Book {
 
     public String getTitle() {
         return title;
+    }
+
+    public UUID getId() {
+        return id;
     }
 }
