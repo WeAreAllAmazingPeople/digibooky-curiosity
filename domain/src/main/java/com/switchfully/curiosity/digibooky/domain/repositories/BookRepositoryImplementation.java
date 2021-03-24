@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
+import java.util.UUID;
 
 @Component
 public class BookRepositoryImplementation implements BookRepository {
@@ -20,5 +21,12 @@ public class BookRepositoryImplementation implements BookRepository {
     @Override
     public Collection<Book> getAllBooks() {
         return database.getAllBooks();
+    }
+
+    @Override
+    public Book getBookById(UUID uuid) {
+        //TODO getBookById in BookRepositoryImplementation has not been implemented yet
+        throw new UnsupportedOperationException("getBookById in BookRepositoryImplementation has not been implemented yet");
+        //return null;
     }
 }

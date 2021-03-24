@@ -9,5 +9,6 @@ public interface BookService {
     //methods used by controller
 
      Collection<Book> getAllBooks();
+     Book getBookById(UUID uuid);
 
 }

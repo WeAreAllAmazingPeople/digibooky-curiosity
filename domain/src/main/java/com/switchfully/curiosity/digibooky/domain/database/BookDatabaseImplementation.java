@@ -17,4 +17,11 @@ public class BookDatabaseImplementation implements BookDatabase {
     public Collection<Book> getAllBooks() {
         return books.values();
     }
+
+    @Override
+    public Book getBookById(UUID uuid) {
+        //TODO getBookById in BookDatabaseImplementation has not been implemented yet
+        throw new UnsupportedOperationException("getBookById in BookDatabaseImplementation has not been implemented yet");
+        //return null;
+    }
 }
