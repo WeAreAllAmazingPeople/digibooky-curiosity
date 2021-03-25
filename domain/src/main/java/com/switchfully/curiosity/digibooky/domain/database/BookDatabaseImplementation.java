@@ -28,4 +28,10 @@ public class BookDatabaseImplementation implements BookDatabase {
         return books.get(uuid);
     }
 
+    @Override
+    public Book addOneBook(Book book) {
+        books.put(book.getId(), book);
+        return books.get(book.getId());
+    }
+
 }

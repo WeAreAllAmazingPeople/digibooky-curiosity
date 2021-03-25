@@ -28,4 +28,9 @@ public class BookServiceImplementation implements BookService {
         return bookRepository.getBookById(uuid);
     }
 
+    @Override
+    public Book addOneBook(Book book) {
+        return bookRepository.addOneBook(book);
+    }
+
 }

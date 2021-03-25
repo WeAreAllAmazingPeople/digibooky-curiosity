@@ -2,6 +2,8 @@ package com.switchfully.curiosity.digibooky.api.dtomappers;
 
 import com.switchfully.curiosity.digibooky.api.dtos.DtoBook;
 import com.switchfully.curiosity.digibooky.api.dtos.DtoBookWithSummary;
+import com.switchfully.curiosity.digibooky.api.dtos.RegisterDtoBook;
+import com.switchfully.curiosity.digibooky.domain.entities.books.Author;
 import com.switchfully.curiosity.digibooky.domain.entities.books.Book;
 import org.springframework.stereotype.Component;
 
@@ -18,7 +20,7 @@ public class BookMapper {
                 .collect(Collectors.toList());
     }
 
-    private DtoBook changeBookToDto(Book book) {
+    public DtoBook changeBookToDto(Book book) {
         return new DtoBook()
                 .setID(book.getId())
                 .setAuthor(book.getAuthor())
@@ -33,5 +35,10 @@ public class BookMapper {
                 .setTitle(book.getTitle())
                 .setISBN(book.getISBN())
                 .setSummary(book.getSummary());
+    }
+
+    public Book changeRegisterDtoToBook(RegisterDtoBook registerDtoBook) {
+        Author tempAuthor = new Author("", registerDtoBook.getAuthorLastName());
+        return new Book(registerDtoBook.getISBN(), tempAuthor, registerDtoBook.getTitle());
     }
 }

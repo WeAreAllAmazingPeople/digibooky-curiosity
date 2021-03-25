@@ -27,4 +27,9 @@ public class BookRepositoryImplementation implements BookRepository {
     public Book getBookById(UUID uuid) {
         return database.getBookById(uuid);
     }
+
+    @Override
+    public Book addOneBook(Book book) {
+        return database.addOneBook(book);
+    }
 }

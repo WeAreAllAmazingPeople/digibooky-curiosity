@@ -10,5 +10,6 @@ public interface BookService {
 
      Collection<Book> getAllBooks();
      Book getBookById(UUID uuid);
+     Book addOneBook(Book book);
 
 }

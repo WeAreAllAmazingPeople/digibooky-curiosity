@@ -7,22 +7,33 @@ public class Book {
     private final String ISBN;     //TODO make value object with ISBN
     private final Author author;
     private final String title;
-    private final String summary;     //QUESTION summary of book story or infos?
+    private String summary;     //QUESTION summary of book story or infos?
 
     public Book(String ISBN, Author author, String title, String summary) {
+       this(ISBN, author, title);
+       this.summary = summary;
+    }
+
+    public Book(String ISBN, Author author, String title) {
+        validateInput(ISBN, author, title);
         this.id = UUID.randomUUID();
+        this.ISBN = ISBN;
+        this.author = author;
+        this.title = title;
+    }
+
+    public Book(String uuid , String ISBN, Author author, String title, String summary) {
+        validateInput(ISBN, author, title);
+        this.id = UUID.fromString(uuid);
         this.ISBN = ISBN;
         this.author = author;
         this.title = title;
         this.summary = summary;
     }
 
-    public Book(String uuid , String ISBN, Author author, String title, String summary) {
-        this.id = UUID.fromString(uuid);
-        this.ISBN = ISBN;
-        this.author = author;
-        this.title = title;
-        this.summary = summary;
+    private void validateInput(String ISBN, Author author, String title) {
+        if (ISBN == null || author.getLastname() == null || title == null)
+            throw new IllegalArgumentException("Cannot create book, invalid input");
     }
 
     public String getISBN() {

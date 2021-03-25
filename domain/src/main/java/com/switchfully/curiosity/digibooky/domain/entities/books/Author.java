@@ -8,4 +8,8 @@ public final class Author {
         this.firstname = firstname;
         this.lastname = lastname;
     }
+
+    public String getLastname() {
+        return lastname;
+    }
 }

@@ -4,6 +4,8 @@ package com.switchfully.curiosity.digibooky.api.controllers;
 import com.switchfully.curiosity.digibooky.api.dtomappers.BookMapper;
 import com.switchfully.curiosity.digibooky.api.dtos.DtoBook;
 import com.switchfully.curiosity.digibooky.api.dtos.DtoBookWithSummary;
+import com.switchfully.curiosity.digibooky.api.dtos.RegisterDtoBook;
+import com.switchfully.curiosity.digibooky.domain.entities.books.Book;
 import com.switchfully.curiosity.digibooky.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -37,6 +39,13 @@ public class BookController {
     public DtoBookWithSummary getOneBook(@PathVariable("id") String id){
         UUID uuid = UUID.fromString(id);
         return bookMapper.changeBookToDtoWithSummary(bookService.getBookById(uuid));
+    }
+
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.CREATED)
+    public DtoBook addOneBook(@RequestBody RegisterDtoBook registerDtoBook){
+        Book bookToRegister = bookMapper.changeRegisterDtoToBook(registerDtoBook);
+        return bookMapper.changeBookToDto(bookService.addOneBook(bookToRegister));
     }
 
 

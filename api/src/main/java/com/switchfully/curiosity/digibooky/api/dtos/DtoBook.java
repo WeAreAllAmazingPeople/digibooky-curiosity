@@ -31,4 +31,19 @@ public class DtoBook {
         return this;
     }
 
+    public String getISBN() {
+        return ISBN;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public UUID getId() {
+        return id;
+    }
 }
