@@ -17,4 +17,20 @@ public final class Address {
     public static boolean isValidAddress(String city) {
         return city!=null;
     }
+
+    public String getStreetName() {
+        return streetName;
+    }
+
+    public String getStreetNumber() {
+        return streetNumber;
+    }
+
+    public String getPostCode() {
+        return postCode;
+    }
+
+    public String getCity() {
+        return city;
+    }
 }

@@ -32,7 +32,31 @@ public class User {
                 && address != null;
     }
 
+    public static String getEmailFormat() {
+        return EMAIL_FORMAT;
+    }
+
     public UUID getId() {
         return id;
+    }
+
+    public String getInss() {
+        return inss;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Address getAddress() {
+        return address;
     }
 }
