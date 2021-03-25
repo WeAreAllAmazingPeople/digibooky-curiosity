@@ -51,9 +51,13 @@ public class BookServiceImplementation implements BookService {
         logger.info("Valid keyword, returning all the books with matching titles");
 
         return getAllBooks().stream()
-                .filter(((Predicate<Book>) book -> book.getTitle().toLowerCase().contains(keyword.toLowerCase()))
+                .filter(((Predicate<Book>) book -> isMatchingNonCaseSensitive(keyword, book))
                         .or(book -> isMatchingRegex(keyword, book)))
                 .collect(Collectors.toList());
+    }
+
+    private boolean isMatchingNonCaseSensitive(String keyword, Book book){
+        return book.getTitle().toLowerCase().contains(keyword.toLowerCase());
     }
 
     private boolean isMatchingRegex(String keyword, Book book) {
