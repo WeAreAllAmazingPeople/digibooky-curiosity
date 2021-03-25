@@ -3,19 +3,18 @@ package com.switchfully.curiosity.digibooky.api.controllers;
 
 import com.switchfully.curiosity.digibooky.api.dtomappers.BookMapper;
 import com.switchfully.curiosity.digibooky.api.dtos.DtoBook;
+import com.switchfully.curiosity.digibooky.api.dtos.DtoBookWithSummary;
 import com.switchfully.curiosity.digibooky.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
-@RequestMapping(value = "/books")
+@RequestMapping(path = "/books")
 public class BookController {
 
     private final BookService bookService;
@@ -32,4 +31,13 @@ public class BookController {
     public List<DtoBook> getAllBooks() {
         return bookMapper.changeListOfBooksToDto(bookService.getAllBooks());
     }
+
+    @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public DtoBookWithSummary getOneBook(@PathVariable("id") String id){
+        UUID uuid = UUID.fromString(id);
+        return bookMapper.changeBookToDtoWithSummary(bookService.getBookById(uuid));
+    }
+
+
 }

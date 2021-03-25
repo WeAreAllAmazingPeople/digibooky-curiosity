@@ -17,6 +17,13 @@ public class Book {
         this.summary = summary;
     }
 
+    public Book(String uuid , String ISBN, Author author, String title, String summary) {
+        this.id = UUID.fromString(uuid);
+        this.ISBN = ISBN;
+        this.author = author;
+        this.title = title;
+        this.summary = summary;
+    }
 
     public String getISBN() {
         return ISBN;
@@ -32,5 +39,9 @@ public class Book {
 
     public UUID getId() {
         return id;
+    }
+
+    public String getSummary() {
+        return summary;
     }
 }

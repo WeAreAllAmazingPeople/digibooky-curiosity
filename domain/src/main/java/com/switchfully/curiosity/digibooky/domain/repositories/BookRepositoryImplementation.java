@@ -25,8 +25,6 @@ public class BookRepositoryImplementation implements BookRepository {
 
     @Override
     public Book getBookById(UUID uuid) {
-        //TODO getBookById in BookRepositoryImplementation has not been implemented yet
-        throw new UnsupportedOperationException("getBookById in BookRepositoryImplementation has not been implemented yet");
-        //return null;
+        return database.getBookById(uuid);
     }
 }

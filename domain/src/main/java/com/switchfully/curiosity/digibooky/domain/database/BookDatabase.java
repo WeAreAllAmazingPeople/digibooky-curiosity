@@ -8,5 +8,4 @@ import java.util.UUID;
 public interface BookDatabase {
     Collection<Book> getAllBooks();
     Book getBookById(UUID uuid);
-
 }
