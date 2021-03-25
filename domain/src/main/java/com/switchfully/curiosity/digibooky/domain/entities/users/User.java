@@ -31,4 +31,8 @@ public class User {
                 && email.matches(EMAIL_FORMAT)
                 && address != null;
     }
+
+    public UUID getId() {
+        return id;
+    }
 }
