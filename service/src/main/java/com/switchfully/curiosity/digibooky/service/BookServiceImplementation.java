@@ -2,16 +2,25 @@ package com.switchfully.curiosity.digibooky.service;
 
 import com.switchfully.curiosity.digibooky.domain.entities.books.Book;
 import com.switchfully.curiosity.digibooky.domain.repositories.BookRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.regex.*;
 
 @Component
 public class BookServiceImplementation implements BookService {
 
     private final BookRepository bookRepository;
+    private final Logger logger = LoggerFactory.getLogger(BookServiceImplementation.class);
+
 
     @Autowired
     public BookServiceImplementation(BookRepository bookRepository) {
@@ -31,6 +40,28 @@ public class BookServiceImplementation implements BookService {
     @Override
     public Book addOneBook(Book book) {
         return bookRepository.addOneBook(book);
+    }
+
+    @Override
+    public List<Book> getBooksByTitle(String keyword) {
+        if (keyword == null || keyword.equals("") || keyword.equals(" ")) {
+            logger.info("Invalid keyword, returning all the books");
+            return List.copyOf(getAllBooks());
+        }
+        logger.info("Valid keyword, returning all the books with matching titles");
+
+        return getAllBooks().stream()
+                .filter(((Predicate<Book>) book -> isMatchingNonCaseSensitive(keyword, book))
+                        .or(book -> isMatchingRegex(keyword, book)))
+                .collect(Collectors.toList());
+    }
+
+    private boolean isMatchingNonCaseSensitive(String keyword, Book book){
+        return book.getTitle().toLowerCase().contains(keyword.toLowerCase());
+    }
+
+    private boolean isMatchingRegex(String keyword, Book book) {
+        return Pattern.matches(keyword, book.getTitle().toLowerCase());
     }
 
 }
