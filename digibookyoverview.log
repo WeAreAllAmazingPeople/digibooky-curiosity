@@ -1,0 +1,20 @@
+2021-03-25 14:36:42.834  INFO 14192 --- [main] c.s.c.digibooky.DigibookyApplication     : Starting DigibookyApplication using Java 15.0.2 on FIN-50SMTT2 with PID 14192 (C:\_development\digibooky-curiosity\war\target\classes started by echitul in C:\_development\digibooky-curiosity)
+2021-03-25 14:36:42.839 DEBUG 14192 --- [main] c.s.c.digibooky.DigibookyApplication     : Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-03-25 14:36:42.840  INFO 14192 --- [main] c.s.c.digibooky.DigibookyApplication     : No active profile set, falling back to default profiles: default
+2021-03-25 14:36:45.252  INFO 14192 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-25 14:36:45.270  INFO 14192 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-25 14:36:45.270  INFO 14192 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-03-25 14:36:45.402  INFO 14192 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-25 14:36:45.403  INFO 14192 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2299 ms
+2021-03-25 14:36:45.908  INFO 14192 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-25 14:36:47.217  INFO 14192 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-25 14:36:47.234  INFO 14192 --- [main] c.s.c.digibooky.DigibookyApplication     : Started DigibookyApplication in 5.807 seconds (JVM running for 7.764)
+2021-03-25 14:37:00.004  INFO 14192 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-25 14:37:00.004  INFO 14192 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-25 14:37:00.005  INFO 14192 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-25 14:37:00.138  INFO 14192 --- [http-nio-8080-exec-1] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-25 14:37:03.843  INFO 14192 --- [http-nio-8080-exec-5] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 605 ms
+2021-03-25 14:37:06.539  INFO 14192 --- [http-nio-8080-exec-6] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-25 14:37:56.439  INFO 14192 --- [http-nio-8080-exec-4] c.s.c.d.api.controllers.BookController   : Registering a book with UUID aeaa79f9-3f60-4933-94d4-2adf46080014
+2021-03-25 14:38:30.934  WARN 14192 --- [http-nio-8080-exec-5] c.s.c.d.api.controllers.BookController   : Cannot create book. Invalid input Cannot create book, invalid input
+2021-03-25 14:38:59.036  INFO 14192 --- [http-nio-8080-exec-9] c.s.c.d.api.controllers.BookController   : Getting all the books
