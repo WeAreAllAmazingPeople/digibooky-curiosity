@@ -38,23 +38,30 @@ public class BookController {
         return bookMapper.changeListOfBooksToDto(bookService.getAllBooks());
     }
 
-    @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public DtoBookWithSummary getOneBook(@PathVariable("id") String id){
+    public DtoBookWithSummary getOneBook(@PathVariable("id") String id) {
         logger.info("Getting one book with UUID " + id);
         UUID uuid = UUID.fromString(id);
         return bookMapper.changeBookToDtoWithSummary(bookService.getBookById(uuid));
     }
 
+    @GetMapping(path = "/{keyword}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public List<DtoBook> getBooksByTitle(@PathVariable("keyword") String keyword) {
+        logger.info("Searching for books with title: " + keyword);
+        return bookMapper.changeListOfBooksToDto(bookService.getBooksByTitle(keyword));
+    }
+
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public DtoBook addOneBook(@RequestBody RegisterDtoBook registerDtoBook){
+    public DtoBook addOneBook(@RequestBody RegisterDtoBook registerDtoBook) {
         try {
             Book bookToRegister = bookMapper.changeRegisterDtoToBook(registerDtoBook);
             logger.info("Registering a book with UUID " + bookToRegister.getId());
             return bookMapper.changeBookToDto(bookService.addOneBook(bookToRegister));
-        } catch (IllegalArgumentException exception){
-            logger.warn("Cannot create book. Invalid input "+ exception.getMessage());
+        } catch (IllegalArgumentException exception) {
+            logger.warn("Cannot create book. Invalid input " + exception.getMessage());
             return null;
         }
     }
