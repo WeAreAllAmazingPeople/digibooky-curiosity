@@ -14,7 +14,7 @@ public class User {
 
     public User(String inss, String lastname, String firstname, String email, Address address) {
         if (!isValidUser(inss, lastname, email, address)) {
-            throw new IllegalArgumentException("Illegal Arguments");
+            throw new IllegalArgumentException("Cannot create user, illegal arguments provided");
         }
         this.id = UUID.randomUUID();
         this.inss = inss;
