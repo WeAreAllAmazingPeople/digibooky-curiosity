@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -32,6 +33,13 @@ public class BookServiceImplementation implements BookService {
     }
 
     @Override
+    public Collection<Book> getAllBooks(String titleKeyword) {
+        return bookRepository.getAllBooks().stream()
+                .filter(book -> titleKeyword == null || isMatchingNonCaseSensitive(titleKeyword, book.getTitle()) || isMatchingRegex(titleKeyword, book.getTitle()))
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public Book getBookById(UUID uuid) {
         return bookRepository.getBookById(uuid);
     }
@@ -41,26 +49,12 @@ public class BookServiceImplementation implements BookService {
         return bookRepository.addOneBook(book);
     }
 
-    @Override
-    public List<Book> getBooksByTitle(String keyword) {
-        if (keyword == null || keyword.equals("") || keyword.equals(" ")) {
-            LOGGER.info("Invalid keyword, returning all the books");
-            return List.copyOf(getAllBooks());
-        }
-        LOGGER.info("Valid keyword, returning all the books with matching titles");
-
-        return getAllBooks().stream()
-                .filter(((Predicate<Book>) book -> isMatchingNonCaseSensitive(keyword, book))
-                        .or(book -> isMatchingRegex(keyword, book)))
-                .collect(Collectors.toList());
+    private boolean isMatchingNonCaseSensitive(String keyword, String title){
+        return title.toLowerCase().contains(keyword.toLowerCase());
     }
 
-    private boolean isMatchingNonCaseSensitive(String keyword, Book book){
-        return book.getTitle().toLowerCase().contains(keyword.toLowerCase());
-    }
-
-    private boolean isMatchingRegex(String keyword, Book book) {
-        return Pattern.matches(keyword, book.getTitle().toLowerCase());
+    private boolean isMatchingRegex(String keyword, String title) {
+        return Pattern.matches(keyword, title.toLowerCase());
     }
 
 }

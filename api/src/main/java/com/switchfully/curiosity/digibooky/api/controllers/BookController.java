@@ -15,6 +15,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -33,9 +34,9 @@ public class BookController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public List<DtoBook> getAllBooks() {//@RequestParam Optional<String> title, @RequestParam(required=false) String author)
+    public List<DtoBook> getAllBooks(@RequestParam(required = false) String title) {
         LOGGER.info("Getting all the books");
-        return bookMapper.changeListOfBooksToDto(bookService.getAllBooks(/*title, author*/));
+        return bookMapper.changeListOfBooksToDto(bookService.getAllBooks(title));
     }
 
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -44,13 +45,6 @@ public class BookController {
         LOGGER.info("Getting one book with UUID " + id);
         UUID uuid = UUID.fromString(id);
         return bookMapper.changeBookToDtoWithSummary(bookService.getBookById(uuid));
-    }
-        // books?title
-    @GetMapping(path = "/{keyword}", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.OK)
-    public List<DtoBook> getBooksByTitle(@PathVariable("keyword") String keyword) {
-        LOGGER.info("Searching for books with title: " + keyword);
-        return bookMapper.changeListOfBooksToDto(bookService.getBooksByTitle(keyword));
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)

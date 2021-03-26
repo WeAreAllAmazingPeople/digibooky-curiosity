@@ -187,3 +187,42 @@ java.lang.IllegalArgumentException: Illegal Arguments
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
 	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
 
+2021-03-26 10:39:35.679  INFO 10828 --- [main] c.s.c.digibooky.DigibookyApplication     : Starting DigibookyApplication using Java 15.0.2 on FIN-32L9TT2 with PID 10828 (C:\_development\switchfullyPractice\digibooky-curiosity\war\target\classes started by lkrebs in C:\_development\switchfullyPractice\digibooky-curiosity)
+2021-03-26 10:39:35.685 DEBUG 10828 --- [main] c.s.c.digibooky.DigibookyApplication     : Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-03-26 10:39:35.686  INFO 10828 --- [main] c.s.c.digibooky.DigibookyApplication     : No active profile set, falling back to default profiles: default
+2021-03-26 10:39:37.151  INFO 10828 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-26 10:39:37.165  INFO 10828 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-26 10:39:37.166  INFO 10828 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-03-26 10:39:37.270  INFO 10828 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-26 10:39:37.270  INFO 10828 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1463 ms
+2021-03-26 10:39:37.637  INFO 10828 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-26 10:39:38.574  INFO 10828 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-26 10:39:38.585  INFO 10828 --- [main] c.s.c.digibooky.DigibookyApplication     : Started DigibookyApplication in 3.744 seconds (JVM running for 5.09)
+2021-03-26 10:39:47.349  INFO 10828 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-26 10:39:47.352  INFO 10828 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-26 10:39:47.355  INFO 10828 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-26 10:39:48.914  INFO 10828 --- [http-nio-8080-exec-7] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 542 ms
+2021-03-26 10:40:26.196  INFO 10828 --- [http-nio-8080-exec-8] c.s.c.d.api.dtomappers.BookMapper        : Returned Book entity based on RegisterDtoBook
+2021-03-26 10:40:26.207  INFO 10828 --- [http-nio-8080-exec-8] c.s.c.d.api.controllers.BookController   : Registering a book with UUID 166d8aa7-6490-4a44-acaf-985be453c910
+2021-03-26 10:40:26.208  INFO 10828 --- [http-nio-8080-exec-8] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on Book entity
+2021-03-26 10:40:28.026  INFO 10828 --- [http-nio-8080-exec-9] c.s.c.d.api.dtomappers.BookMapper        : Returned Book entity based on RegisterDtoBook
+2021-03-26 10:40:28.027  INFO 10828 --- [http-nio-8080-exec-9] c.s.c.d.api.controllers.BookController   : Registering a book with UUID 063a094e-bb7b-4efd-be71-554686dbdccb
+2021-03-26 10:40:28.028  INFO 10828 --- [http-nio-8080-exec-9] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on Book entity
+2021-03-26 10:40:38.061  INFO 10828 --- [http-nio-8080-exec-10] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 10:40:38.069  INFO 10828 --- [http-nio-8080-exec-10] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 10:40:38.070  INFO 10828 --- [http-nio-8080-exec-10] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on Book entity
+2021-03-26 10:40:38.078  INFO 10828 --- [http-nio-8080-exec-10] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on Book entity
+2021-03-26 10:41:18.325  INFO 10828 --- [http-nio-8080-exec-2] c.s.c.d.api.dtomappers.BookMapper        : Returned Book entity based on RegisterDtoBook
+2021-03-26 10:41:18.326  INFO 10828 --- [http-nio-8080-exec-2] c.s.c.d.api.controllers.BookController   : Registering a book with UUID c523654e-bee5-4f2a-a18e-6d5109fcaf2a
+2021-03-26 10:41:18.326  INFO 10828 --- [http-nio-8080-exec-2] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on Book entity
+2021-03-26 10:41:27.712  INFO 10828 --- [http-nio-8080-exec-3] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 10:41:27.715  INFO 10828 --- [http-nio-8080-exec-3] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 10:41:27.717  INFO 10828 --- [http-nio-8080-exec-3] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on Book entity
+2021-03-26 10:41:27.717  INFO 10828 --- [http-nio-8080-exec-3] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on Book entity
+2021-03-26 10:41:27.774  INFO 10828 --- [http-nio-8080-exec-3] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on Book entity
+2021-03-26 10:41:55.789  INFO 10828 --- [http-nio-8080-exec-4] c.s.c.d.api.dtomappers.BookMapper        : Returned Book entity based on RegisterDtoBook
+2021-03-26 10:41:55.790  INFO 10828 --- [http-nio-8080-exec-4] c.s.c.d.api.controllers.BookController   : Registering a book with UUID b982dc3e-2c89-4aea-abc0-7a6f2719685e
+2021-03-26 10:41:55.791  INFO 10828 --- [http-nio-8080-exec-4] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on Book entity
+2021-03-26 10:42:06.999  INFO 10828 --- [http-nio-8080-exec-5] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 10:42:07.000  INFO 10828 --- [http-nio-8080-exec-5] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 10:42:07.001  INFO 10828 --- [http-nio-8080-exec-5] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on Book entity
