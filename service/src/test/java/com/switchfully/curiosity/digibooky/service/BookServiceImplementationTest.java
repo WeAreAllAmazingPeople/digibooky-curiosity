@@ -36,31 +36,31 @@ class BookServiceImplementationTest {
 
     @Test
     void getBooksByTitle_givenNullKeyword_thenReturnAllBooks() {
-         assertEquals(List.of(book1, book2, book3), bookService.getBooksByTitle(null));
+         assertEquals(List.of(book1, book2, book3),bookService.getAllBooks(null));
     }
 
     @Test
     void getBooksByTitle_givenEmptyKeyword_thenReturnAllBooks() {
-        assertEquals(List.of(book1, book2, book3), bookService.getBooksByTitle(""));
+        assertEquals(List.of(book1, book2, book3), bookService.getAllBooks(""));
     }
 
     @Test
     void getBooksByTitle_givenBlankSpaceKeyword_thenReturnAllBooks() {
-        assertEquals(List.of(book1, book2,book3), bookService.getBooksByTitle(" "));
+        assertEquals(List.of(book1, book2,book3), bookService.getAllBooks(" "));
     }
 
     @Test
     void getBooksByTitle_givenKeywordTitle_thenReturn2MatchingBooks() {
-        assertEquals(List.of(book1, book2), bookService.getBooksByTitle("title"));
+        assertEquals(List.of(book1, book2), bookService.getAllBooks("title"));
     }
 
     @Test
     void getBooksByTitle_givenKeywordFunny_thenReturn1MatchingBooks() {
-        assertEquals(List.of(book1), bookService.getBooksByTitle("funny"));
+        assertEquals(List.of(book1), bookService.getAllBooks("funny"));
     }
     @Test
     void getBooksByTitle_givenWilcardKeywordFun_thenReturn1MatchingBooks() {
-        assertEquals(List.of(book1,book2), bookService.getBooksByTitle(".*tit.*"));
+        assertEquals(List.of(book1,book2), bookService.getAllBooks(".*tit.*"));
     }
 
 }
