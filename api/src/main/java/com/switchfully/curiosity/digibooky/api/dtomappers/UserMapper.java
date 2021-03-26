@@ -15,10 +15,18 @@ public class UserMapper {
                 registerDtoUser.getFirstName(),
                 registerDtoUser.getEmail(),
                 registerDtoUser.getAddress()
-                );
+        );
     }
 
     public DtoUser changeUserToDto(User user) {
+        //BUILDER SETTERS ON (FLUENT API)
+        return new DtoUser()
+                .setId(user.getId())
+                .setINSS(user.getInss())
+                .setLastName(user.getLastname())
+                .setFirstName(user.getFirstname())
+                .setEmail(user.getEmail())
+                .setAddress(user.getAddress());
         //NOT BUILDER SETTERS
 //        DtoUser dtoUser = new DtoUser();
 //        dtoUser.setId(user.getId());
@@ -28,15 +36,8 @@ public class UserMapper {
 //        dtoUser.setEmail(user.getEmail());
 //        dtoUser.setAddress(user.getAddress());
 //        return dtoUser;
-
-        //BUILDER SETTERS ON (FLUENT API)
-        return new DtoUser()
-                .setId(user.getId())
-                .setINSS(user.getInss())
-                .setLastName(user.getLastname())
-                .setFirstName(user.getFirstname())
-                .setEmail(user.getEmail())
-                .setAddress(user.getAddress());
     }
 }
+
+
 

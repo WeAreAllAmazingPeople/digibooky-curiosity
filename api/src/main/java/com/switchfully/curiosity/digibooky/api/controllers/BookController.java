@@ -1,6 +1,5 @@
 package com.switchfully.curiosity.digibooky.api.controllers;
 
-
 import com.switchfully.curiosity.digibooky.api.dtomappers.BookMapper;
 import com.switchfully.curiosity.digibooky.api.dtos.DtoBook;
 import com.switchfully.curiosity.digibooky.api.dtos.DtoBookWithSummary;
@@ -15,7 +14,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -49,12 +47,11 @@ public class BookController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public DtoBook addOneBook(@RequestBody RegisterDtoBook registerDtoBook) {
-        LOGGER.info("Attempting to create book");
-
+    public DtoBook createBook(@RequestBody RegisterDtoBook registerDtoBook) {
+        LOGGER.info("Creating a book");
         Book bookToRegister = bookMapper.changeRegisterDtoToBook(registerDtoBook);
-        LOGGER.info("Registering a book with UUID " + bookToRegister.getId());
-        return bookMapper.changeBookToDto(bookService.addOneBook(bookToRegister));
+        LOGGER.info("Registering a new book with UUID " + bookToRegister.getId());
+        return bookMapper.changeBookToDto(bookService.createBook(bookToRegister));
     }
 }
 

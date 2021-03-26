@@ -29,7 +29,7 @@ class BookControllerTest {
     void whenGettingBookById_thenCorrectBookIsReturned() {
         Author author = new Author("john", "doe");
         Book testBook = new Book("f87c152c-8d47-11eb-8dcd-0242ac130003", "isbn", author, "title", "summary");
-        bookDatabase.addBook(testBook);
+        bookDatabase.createBook(testBook);
 
         DtoBookWithSummary dtoBookWithSummary = new DtoBookWithSummary()
                 .setID(UUID.fromString("f87c152c-8d47-11eb-8dcd-0242ac130003"))

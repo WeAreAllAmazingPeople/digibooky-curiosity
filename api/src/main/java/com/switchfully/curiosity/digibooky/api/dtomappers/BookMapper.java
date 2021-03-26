@@ -3,9 +3,7 @@ package com.switchfully.curiosity.digibooky.api.dtomappers;
 import com.switchfully.curiosity.digibooky.api.dtos.DtoBook;
 import com.switchfully.curiosity.digibooky.api.dtos.DtoBookWithSummary;
 import com.switchfully.curiosity.digibooky.api.dtos.RegisterDtoBook;
-import com.switchfully.curiosity.digibooky.domain.entities.books.Author;
 import com.switchfully.curiosity.digibooky.domain.entities.books.Book;
-import com.switchfully.curiosity.digibooky.service.BookServiceImplementation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -27,7 +25,7 @@ public class BookMapper {
     }
 
     public DtoBook changeBookToDto(Book book) {
-        LOGGER.info("Returned DtoBook based on Book entity");
+        LOGGER.info("Returned DtoBook based on book");
         return new DtoBook()
                 .setID(book.getId())
                 .setAuthor(book.getAuthor())
@@ -36,7 +34,8 @@ public class BookMapper {
     }
 
     public DtoBookWithSummary changeBookToDtoWithSummary(Book book) {
-        LOGGER.info("Returned DtoBookWithSummary based on Book entity");
+        LOGGER.info("Returned DtoBookWithSummary based on book");
+        if (book == null) throw new IllegalArgumentException("No book was found");
         return new DtoBookWithSummary()
                 .setID(book.getId())
                 .setAuthor(book.getAuthor())
@@ -47,6 +46,9 @@ public class BookMapper {
 
     public Book changeRegisterDtoToBook(RegisterDtoBook registerDtoBook) {
         LOGGER.info("Returned Book entity based on RegisterDtoBook");
-        return new Book(registerDtoBook.getISBN(), registerDtoBook.getAuthor(), registerDtoBook.getTitle(), registerDtoBook.getSummary());
+        return new Book(registerDtoBook.getISBN(),
+                registerDtoBook.getAuthor(),
+                registerDtoBook.getTitle(),
+                registerDtoBook.getSummary());
     }
 }

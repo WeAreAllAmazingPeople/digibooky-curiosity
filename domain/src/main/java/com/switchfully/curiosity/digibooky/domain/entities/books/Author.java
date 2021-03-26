@@ -11,7 +11,7 @@ public final class Author {
 
     public Author(String firstname, String lastname) {
         if (firstname == null) {
-            LOGGER.info("Author's first name was null, so an empty string was provided to Register a book");
+            LOGGER.info("Author's first name was null, so an empty string was provided to register the book");
             this.firstname = "";
         } else {
             this.firstname = firstname;

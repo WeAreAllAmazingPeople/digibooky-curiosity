@@ -4,15 +4,16 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class Book {
+
     private final UUID id;
-    private final String ISBN;     //TODO make value object with ISBN
+    private final String ISBN;     //Option: TODO make value object with ISBN
     private final Author author;
     private final String title;
-    private String summary;     //QUESTION summary of book story or infos?
+    private String summary;
 
     public Book(String ISBN, Author author, String title, String summary) {
-       this(ISBN, author, title);
-       this.summary = summary;
+        this(ISBN, author, title);
+        this.summary = summary;
     }
 
     public Book(String ISBN, Author author, String title) {
@@ -23,7 +24,7 @@ public class Book {
         this.title = title;
     }
 
-    public Book(String uuid , String ISBN, Author author, String title, String summary) {
+    public Book(String uuid, String ISBN, Author author, String title, String summary) {
         validateInput(ISBN, author, title);
         this.id = UUID.fromString(uuid);
         this.ISBN = ISBN;

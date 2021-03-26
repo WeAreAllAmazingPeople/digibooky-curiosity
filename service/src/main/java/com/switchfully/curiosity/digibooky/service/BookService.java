@@ -6,11 +6,9 @@ import java.util.Collection;
 import java.util.UUID;
 
 public interface BookService {
-    //methods used by controller
-
-     Collection<Book> getAllBooks();
     Collection<Book> getAllBooks(String title, String isbn, String authorName);
-     Book getBookById(UUID uuid);
-     Book addOneBook(Book book);
 
+    Book getBookById(UUID uuid);
+
+    Book createBook(Book book);
 }
