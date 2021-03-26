@@ -5,6 +5,8 @@ import com.switchfully.curiosity.digibooky.api.dtos.DtoUser;
 import com.switchfully.curiosity.digibooky.api.dtos.RegisterDtoUser;
 import com.switchfully.curiosity.digibooky.domain.entities.users.User;
 import com.switchfully.curiosity.digibooky.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -16,6 +18,8 @@ public class UserController {
 
     private final UserService userService;
     private final UserMapper userMapper;
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
+
 
     @Autowired
     public UserController(UserService userService, UserMapper userMapper) {
@@ -26,6 +30,7 @@ public class UserController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public DtoUser createUser(@RequestBody RegisterDtoUser registerDtoUser) {
+        LOGGER.info("Starting User Registration");
         //Create user
         User userToRegister = userMapper.changeRegisterDtoToUser(registerDtoUser);
 
