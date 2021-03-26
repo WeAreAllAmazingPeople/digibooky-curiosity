@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Locale;
 import java.util.UUID;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -19,7 +18,7 @@ import java.util.regex.*;
 public class BookServiceImplementation implements BookService {
 
     private final BookRepository bookRepository;
-    private final Logger logger = LoggerFactory.getLogger(BookServiceImplementation.class);
+    private final Logger LOGGER = LoggerFactory.getLogger(BookServiceImplementation.class);
 
 
     @Autowired
@@ -45,10 +44,10 @@ public class BookServiceImplementation implements BookService {
     @Override
     public List<Book> getBooksByTitle(String keyword) {
         if (keyword == null || keyword.equals("") || keyword.equals(" ")) {
-            logger.info("Invalid keyword, returning all the books");
+            LOGGER.info("Invalid keyword, returning all the books");
             return List.copyOf(getAllBooks());
         }
-        logger.info("Valid keyword, returning all the books with matching titles");
+        LOGGER.info("Valid keyword, returning all the books with matching titles");
 
         return getAllBooks().stream()
                 .filter(((Predicate<Book>) book -> isMatchingNonCaseSensitive(keyword, book))
