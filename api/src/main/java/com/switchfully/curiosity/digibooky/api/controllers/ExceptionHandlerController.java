@@ -20,4 +20,10 @@ public class ExceptionHandlerController extends ResponseEntityExceptionHandler {
         response.sendError(HttpServletResponse.SC_BAD_REQUEST, exception.getMessage());
     }
 
+    @ExceptionHandler(IllegalStateException.class)
+    public void handleIllegalStateException(IllegalStateException exception, HttpServletResponse response) throws IOException {
+        LOGGER.warn(exception.getMessage(), exception);
+        response.sendError(HttpServletResponse.SC_BAD_REQUEST, exception.getMessage());
+    }
+
 }

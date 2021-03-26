@@ -10,6 +10,7 @@ public class Book {
     private final Author author;
     private final String title;
     private String summary;
+    private boolean isAvailable = true;
 
     public Book(String ISBN, Author author, String title, String summary) {
         this(ISBN, author, title);
@@ -27,6 +28,17 @@ public class Book {
     private void validateInput(String ISBN, Author author, String title) {
         if (ISBN == null || author.getLastname() == null || title == null)
             throw new IllegalArgumentException("Cannot create book, invalid input");
+    }
+
+    public void lend() {
+        if (!isAvailable) {
+            throw new IllegalStateException("Book not available");
+        }
+        this.isAvailable = false;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
     }
 
     public String getISBN() {
