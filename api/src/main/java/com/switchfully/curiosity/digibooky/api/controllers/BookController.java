@@ -51,14 +51,11 @@ public class BookController {
     @ResponseStatus(HttpStatus.CREATED)
     public DtoBook addOneBook(@RequestBody RegisterDtoBook registerDtoBook) {
         LOGGER.info("Attempting to create book");
-        try {
-            Book bookToRegister = bookMapper.changeRegisterDtoToBook(registerDtoBook);
-            LOGGER.info("Registering a book with UUID " + bookToRegister.getId());
-            return bookMapper.changeBookToDto(bookService.addOneBook(bookToRegister));
-        } catch (IllegalArgumentException exception) {
-            LOGGER.warn("Cannot create book. Invalid input " + exception.getMessage());
-            return null;
-        }
-    }
 
+        Book bookToRegister = bookMapper.changeRegisterDtoToBook(registerDtoBook);
+        LOGGER.info("Registering a book with UUID " + bookToRegister.getId());
+        return bookMapper.changeBookToDto(bookService.addOneBook(bookToRegister));
+    }
 }
+
+
