@@ -7,6 +7,8 @@ import java.util.UUID;
 
 public interface BookService {
     Collection<Book> getAllBooks(String title, String isbn, String authorName);
+
     Book getBookById(UUID uuid);
-    Book addOneBook(Book book);
+
+    Book createBook(Book book);
 }

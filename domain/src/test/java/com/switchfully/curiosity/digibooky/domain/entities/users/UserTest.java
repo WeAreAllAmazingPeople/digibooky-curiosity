@@ -10,6 +10,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UserTest {
 
+    //TODO @BeforeEach test
+
     @Test
     void isValidUser_GivenINSS_ThenUserIsValid() {
         //Given
@@ -44,7 +46,6 @@ class UserTest {
        String lastName = "lastname";
        String email = "user@example.com";
        Address address = new Address("streetname", "123", "1230", "abc");
-
        //When
        //Then
        assertTrue(User.isValidUser(inss,lastName, email, address));

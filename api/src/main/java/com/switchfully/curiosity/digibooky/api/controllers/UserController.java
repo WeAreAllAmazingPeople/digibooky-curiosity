@@ -36,6 +36,7 @@ public class UserController {
 
         //Call service to create user
         User createdUser = userService.createUser(userToRegister);
+        LOGGER.info("Created user with ID: " + userToRegister.getId());
 
         //Returns a new user created
         return userMapper.changeUserToDto(createdUser);

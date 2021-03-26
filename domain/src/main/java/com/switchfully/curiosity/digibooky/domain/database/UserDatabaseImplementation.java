@@ -25,8 +25,7 @@ public class UserDatabaseImplementation implements UserDatabase {
         userMap.put(user.getId(), user);
     }
 
-    boolean isNewUser(User user){//TODO unique:id, inss, email
+    boolean isNewUser(User user) {//TODO unique:id, inss, email -> TESTS + VALIDATION (TDD)
         return true;
     }
-
 }

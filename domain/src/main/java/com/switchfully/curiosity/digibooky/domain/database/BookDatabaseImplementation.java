@@ -24,7 +24,7 @@ public class BookDatabaseImplementation implements BookDatabase {
     }
 
     @Override
-    public Book addOneBook(Book book) {
+    public Book createBook(Book book) {
         books.put(book.getId(), book);
         return books.get(book.getId());
     }

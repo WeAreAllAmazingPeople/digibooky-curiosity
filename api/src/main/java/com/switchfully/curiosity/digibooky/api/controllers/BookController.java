@@ -47,11 +47,11 @@ public class BookController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public DtoBook addOneBook(@RequestBody RegisterDtoBook registerDtoBook) {
+    public DtoBook createBook(@RequestBody RegisterDtoBook registerDtoBook) {
         LOGGER.info("Creating a book");
         Book bookToRegister = bookMapper.changeRegisterDtoToBook(registerDtoBook);
         LOGGER.info("Registering a new book with UUID " + bookToRegister.getId());
-        return bookMapper.changeBookToDto(bookService.addOneBook(bookToRegister));
+        return bookMapper.changeBookToDto(bookService.createBook(bookToRegister));
     }
 }
 

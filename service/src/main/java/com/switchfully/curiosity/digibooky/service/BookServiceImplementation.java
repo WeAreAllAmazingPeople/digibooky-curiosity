@@ -40,9 +40,9 @@ public class BookServiceImplementation implements BookService {
     }
 
     @Override
-    public Book addOneBook(Book book) {
+    public Book createBook(Book book) {
         LOGGER.info("Adding one book");
-        return bookRepository.addOneBook(book);
+        return bookRepository.createBook(book);
     }
 
     private boolean isMatchingNonCaseSensitive(String keyword, String content) {

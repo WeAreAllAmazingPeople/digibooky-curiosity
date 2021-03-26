@@ -29,7 +29,7 @@ public class BookRepositoryImplementation implements BookRepository {
     }
 
     @Override
-    public Book addOneBook(Book book) {
-        return database.addOneBook(book);
+    public Book createBook(Book book) {
+        return database.createBook(book);
     }
 }

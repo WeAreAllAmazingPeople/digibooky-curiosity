@@ -28,9 +28,9 @@ class BookServiceImplementationTest {
         book1 = new Book("f87c152c-8d47-11eb-8dcd-0242ac130001", "878-3-16-148410-1", author1, "a funny title", "summary");
         book2 = new Book("f87c152c-8d47-11eb-8dcd-0242ac130002", "878-3-16-148410-2", author1, "a title serious", "summary");
         book3 = new Book("f87c152c-8d47-11eb-8dcd-0242ac130003", "999-9-99-999999-9", author2, "not a ti-tl-e", "summary");
-        bookService.addOneBook(book1);
-        bookService.addOneBook(book2);
-        bookService.addOneBook(book3);
+        bookService.createBook(book1);
+        bookService.createBook(book2);
+        bookService.createBook(book3);
     }
 
     //title search
