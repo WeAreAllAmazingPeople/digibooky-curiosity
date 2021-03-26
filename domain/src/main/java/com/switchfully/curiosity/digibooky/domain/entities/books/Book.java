@@ -24,15 +24,6 @@ public class Book {
         this.title = title;
     }
 
-    public Book(String uuid, String ISBN, Author author, String title, String summary) {
-        validateInput(ISBN, author, title);
-        this.id = UUID.fromString(uuid);
-        this.ISBN = ISBN;
-        this.author = author;
-        this.title = title;
-        this.summary = summary;
-    }
-
     private void validateInput(String ISBN, Author author, String title) {
         if (ISBN == null || author.getLastname() == null || title == null)
             throw new IllegalArgumentException("Cannot create book, invalid input");

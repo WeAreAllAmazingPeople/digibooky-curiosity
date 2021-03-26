@@ -206,3 +206,287 @@ java.lang.IllegalArgumentException: Cannot create book, invalid input
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
 	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
 
+2021-03-26 12:53:29.087  INFO 4276 --- [main] c.s.c.digibooky.DigibookyApplication     : Starting DigibookyApplication using Java 15.0.2 on FIN-50SMTT2 with PID 4276 (C:\_development\digibooky-curiosity\war\target\classes started by echitul in C:\_development\digibooky-curiosity)
+2021-03-26 12:53:29.091 DEBUG 4276 --- [main] c.s.c.digibooky.DigibookyApplication     : Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-03-26 12:53:29.093  INFO 4276 --- [main] c.s.c.digibooky.DigibookyApplication     : No active profile set, falling back to default profiles: default
+2021-03-26 12:53:30.720  INFO 4276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-26 12:53:30.733  INFO 4276 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-26 12:53:30.733  INFO 4276 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-03-26 12:53:30.831  INFO 4276 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-26 12:53:30.831  INFO 4276 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1571 ms
+2021-03-26 12:53:31.189  INFO 4276 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-26 12:53:32.095  INFO 4276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-26 12:53:32.108  INFO 4276 --- [main] c.s.c.digibooky.DigibookyApplication     : Started DigibookyApplication in 4.061 seconds (JVM running for 6.451)
+2021-03-26 12:53:41.639  INFO 4276 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-26 12:53:41.639  INFO 4276 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-26 12:53:41.640  INFO 4276 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-26 12:53:43.609  INFO 4276 --- [http-nio-8080-exec-7] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 546 ms
+2021-03-26 12:54:31.029  INFO 4276 --- [http-nio-8080-exec-1] c.s.c.d.api.controllers.BookController   : Attempting to create book
+2021-03-26 12:54:31.030  INFO 4276 --- [http-nio-8080-exec-1] c.s.c.d.api.dtomappers.BookMapper        : Returned Book entity based on RegisterDtoBook
+2021-03-26 12:54:31.032  INFO 4276 --- [http-nio-8080-exec-1] c.s.c.d.api.controllers.BookController   : Registering a book with UUID ce0079d8-aac6-4176-b198-347529a0a196
+2021-03-26 12:54:31.042  INFO 4276 --- [http-nio-8080-exec-1] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on Book entity
+2021-03-26 12:55:03.920  INFO 4276 --- [http-nio-8080-exec-4] c.s.c.d.api.controllers.BookController   : Attempting to create book
+2021-03-26 12:55:03.921  INFO 4276 --- [http-nio-8080-exec-4] c.s.c.d.api.dtomappers.BookMapper        : Returned Book entity based on RegisterDtoBook
+2021-03-26 12:55:03.921  INFO 4276 --- [http-nio-8080-exec-4] c.s.c.d.api.controllers.BookController   : Registering a book with UUID ad364e82-41fa-4970-b35e-94c57002e221
+2021-03-26 12:55:03.921  INFO 4276 --- [http-nio-8080-exec-4] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on Book entity
+2021-03-26 12:55:11.749  INFO 4276 --- [http-nio-8080-exec-6] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 12:55:11.753  INFO 4276 --- [http-nio-8080-exec-6] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 12:55:11.754  INFO 4276 --- [http-nio-8080-exec-6] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on Book entity
+2021-03-26 12:55:11.754  INFO 4276 --- [http-nio-8080-exec-6] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on Book entity
+2021-03-26 12:55:23.773  INFO 4276 --- [http-nio-8080-exec-7] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 12:55:23.774  INFO 4276 --- [http-nio-8080-exec-7] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 12:55:40.454  INFO 4276 --- [http-nio-8080-exec-10] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 12:55:40.454  INFO 4276 --- [http-nio-8080-exec-10] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 12:55:40.455  INFO 4276 --- [http-nio-8080-exec-10] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on Book entity
+2021-03-26 12:55:52.672  INFO 4276 --- [http-nio-8080-exec-1] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 12:55:52.673  INFO 4276 --- [http-nio-8080-exec-1] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 12:55:52.673  INFO 4276 --- [http-nio-8080-exec-1] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on Book entity
+2021-03-26 12:56:07.570  INFO 4276 --- [http-nio-8080-exec-4] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 12:56:07.571  INFO 4276 --- [http-nio-8080-exec-4] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 12:56:07.572  INFO 4276 --- [http-nio-8080-exec-4] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on Book entity
+2021-03-26 12:56:11.359  INFO 4276 --- [http-nio-8080-exec-6] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 12:56:11.360  INFO 4276 --- [http-nio-8080-exec-6] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 12:56:11.360  INFO 4276 --- [http-nio-8080-exec-6] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on Book entity
+2021-03-26 14:16:31.527  INFO 11872 --- [main] c.s.c.digibooky.DigibookyApplication     : Starting DigibookyApplication using Java 15.0.2 on FIN-50SMTT2 with PID 11872 (C:\_development\digibooky-curiosity\war\target\classes started by echitul in C:\_development\digibooky-curiosity)
+2021-03-26 14:16:31.536 DEBUG 11872 --- [main] c.s.c.digibooky.DigibookyApplication     : Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-03-26 14:16:31.538  INFO 11872 --- [main] c.s.c.digibooky.DigibookyApplication     : No active profile set, falling back to default profiles: default
+2021-03-26 14:16:35.704  INFO 11872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-26 14:16:35.724  INFO 11872 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-26 14:16:35.725  INFO 11872 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-03-26 14:16:35.958  INFO 11872 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-26 14:16:35.958  INFO 11872 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4230 ms
+2021-03-26 14:16:36.787  INFO 11872 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-26 14:16:38.625  INFO 11872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-26 14:16:38.661  INFO 11872 --- [main] c.s.c.digibooky.DigibookyApplication     : Started DigibookyApplication in 8.836 seconds (JVM running for 10.886)
+2021-03-26 14:16:38.811  INFO 11872 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-26 14:16:38.813  INFO 11872 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-26 14:16:38.816  INFO 11872 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-03-26 14:16:40.364  INFO 11872 --- [http-nio-8080-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 673 ms
+2021-03-26 14:17:09.960  INFO 11872 --- [http-nio-8080-exec-5] c.s.c.d.api.controllers.BookController   : Creating a book
+2021-03-26 14:17:09.964  INFO 11872 --- [http-nio-8080-exec-5] c.s.c.d.api.dtomappers.BookMapper        : Returned Book entity based on RegisterDtoBook
+2021-03-26 14:17:09.968  INFO 11872 --- [http-nio-8080-exec-5] c.s.c.d.api.controllers.BookController   : Registering a new book with UUID 924eb04b-6fb3-40ca-9a9a-18fcad8c8df3
+2021-03-26 14:17:09.971  INFO 11872 --- [http-nio-8080-exec-5] c.s.c.d.s.BookServiceImplementation      : Adding one book
+2021-03-26 14:17:09.974  INFO 11872 --- [http-nio-8080-exec-5] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 14:17:37.648  INFO 11872 --- [http-nio-8080-exec-6] c.s.c.d.domain.entities.books.Author     : Author's first name was null, so an empty string was provided to register the book
+2021-03-26 14:17:37.677  INFO 11872 --- [http-nio-8080-exec-6] c.s.c.d.api.controllers.BookController   : Creating a book
+2021-03-26 14:17:37.694  INFO 11872 --- [http-nio-8080-exec-6] c.s.c.d.api.dtomappers.BookMapper        : Returned Book entity based on RegisterDtoBook
+2021-03-26 14:17:37.700  INFO 11872 --- [http-nio-8080-exec-6] c.s.c.d.api.controllers.BookController   : Registering a new book with UUID 772de8b0-a6d7-435e-828f-9c15e30735ac
+2021-03-26 14:17:37.745  INFO 11872 --- [http-nio-8080-exec-6] c.s.c.d.s.BookServiceImplementation      : Adding one book
+2021-03-26 14:17:37.745  INFO 11872 --- [http-nio-8080-exec-6] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 14:17:50.629  INFO 11872 --- [http-nio-8080-exec-9] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 14:17:50.629  INFO 11872 --- [http-nio-8080-exec-9] c.s.c.d.s.BookServiceImplementation      : Getting all books by provided keywords
+2021-03-26 14:17:50.631  INFO 11872 --- [http-nio-8080-exec-9] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 14:17:50.639  INFO 11872 --- [http-nio-8080-exec-9] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 14:17:50.639  INFO 11872 --- [http-nio-8080-exec-9] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 14:18:24.744  INFO 11872 --- [http-nio-8080-exec-10] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 14:18:24.745  INFO 11872 --- [http-nio-8080-exec-10] c.s.c.d.s.BookServiceImplementation      : Getting all books by provided keywords
+2021-03-26 14:18:24.745  INFO 11872 --- [http-nio-8080-exec-10] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 14:18:24.745  INFO 11872 --- [http-nio-8080-exec-10] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 14:18:39.428  INFO 11872 --- [http-nio-8080-exec-1] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 14:18:39.429  INFO 11872 --- [http-nio-8080-exec-1] c.s.c.d.s.BookServiceImplementation      : Getting all books by provided keywords
+2021-03-26 14:18:39.429  INFO 11872 --- [http-nio-8080-exec-1] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 14:18:39.430  INFO 11872 --- [http-nio-8080-exec-1] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 14:18:39.453  INFO 11872 --- [http-nio-8080-exec-1] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 14:20:31.707  INFO 11872 --- [http-nio-8080-exec-2] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 14:20:31.708  INFO 11872 --- [http-nio-8080-exec-2] c.s.c.d.s.BookServiceImplementation      : Getting all books by provided keywords
+2021-03-26 14:20:31.714  INFO 11872 --- [http-nio-8080-exec-2] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 14:20:31.715  INFO 11872 --- [http-nio-8080-exec-2] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 18:28:29.040  INFO 6784 --- [main] c.s.c.digibooky.DigibookyApplication     : Starting DigibookyApplication using Java 15.0.2 on FIN-32L9TT2 with PID 6784 (C:\_development\switchfullyPractice\digibooky-curiosity\war\target\classes started by lkrebs in C:\_development\switchfullyPractice\digibooky-curiosity)
+2021-03-26 18:28:29.045 DEBUG 6784 --- [main] c.s.c.digibooky.DigibookyApplication     : Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-03-26 18:28:29.045  INFO 6784 --- [main] c.s.c.digibooky.DigibookyApplication     : No active profile set, falling back to default profiles: default
+2021-03-26 18:28:30.512  INFO 6784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-26 18:28:30.530  INFO 6784 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-26 18:28:30.531  INFO 6784 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-03-26 18:28:30.621  INFO 6784 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-26 18:28:30.622  INFO 6784 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1500 ms
+2021-03-26 18:28:30.927  INFO 6784 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-26 18:28:31.670  WARN 6784 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2021-03-26 18:28:31.671  INFO 6784 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-26 18:28:31.671  INFO 6784 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-03-26 18:28:31.702  INFO 6784 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-03-26 18:28:31.732 ERROR 6784 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2021-03-26 18:28:49.672  INFO 1432 --- [main] c.s.c.digibooky.DigibookyApplication     : Starting DigibookyApplication using Java 15.0.2 on FIN-32L9TT2 with PID 1432 (C:\_development\switchfullyPractice\digibooky-curiosity\war\target\classes started by lkrebs in C:\_development\switchfullyPractice\digibooky-curiosity)
+2021-03-26 18:28:49.676 DEBUG 1432 --- [main] c.s.c.digibooky.DigibookyApplication     : Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-03-26 18:28:49.676  INFO 1432 --- [main] c.s.c.digibooky.DigibookyApplication     : No active profile set, falling back to default profiles: default
+2021-03-26 18:28:51.052  INFO 1432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-26 18:28:51.075  INFO 1432 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-26 18:28:51.075  INFO 1432 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-03-26 18:28:51.182  INFO 1432 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-26 18:28:51.182  INFO 1432 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1410 ms
+2021-03-26 18:28:51.502  INFO 1432 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-26 18:28:52.371  WARN 1432 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2021-03-26 18:28:52.372  INFO 1432 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-26 18:28:52.372  INFO 1432 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-03-26 18:28:52.392  INFO 1432 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-03-26 18:28:52.415 ERROR 1432 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2021-03-26 18:30:06.196  INFO 8784 --- [main] c.s.c.digibooky.DigibookyApplication     : Starting DigibookyApplication using Java 15.0.2 on FIN-32L9TT2 with PID 8784 (C:\_development\switchfullyPractice\digibooky-curiosity\war\target\classes started by lkrebs in C:\_development\switchfullyPractice\digibooky-curiosity)
+2021-03-26 18:30:06.204 DEBUG 8784 --- [main] c.s.c.digibooky.DigibookyApplication     : Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-03-26 18:30:06.206  INFO 8784 --- [main] c.s.c.digibooky.DigibookyApplication     : No active profile set, falling back to default profiles: default
+2021-03-26 18:30:08.162  INFO 8784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-26 18:30:08.182  INFO 8784 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-26 18:30:08.182  INFO 8784 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-03-26 18:30:08.271  INFO 8784 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-26 18:30:08.271  INFO 8784 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1671 ms
+2021-03-26 18:30:08.631  INFO 8784 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-26 18:30:09.426  WARN 8784 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2021-03-26 18:30:09.432  INFO 8784 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-26 18:30:09.432  INFO 8784 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-03-26 18:30:09.450  INFO 8784 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-03-26 18:30:09.471 ERROR 8784 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2021-03-26 18:31:26.055  INFO 10572 --- [main] c.s.c.digibooky.DigibookyApplication     : Starting DigibookyApplication using Java 15.0.2 on FIN-32L9TT2 with PID 10572 (C:\_development\switchfullyPractice\digibooky-curiosity\war\target\classes started by lkrebs in C:\_development\switchfullyPractice\digibooky-curiosity)
+2021-03-26 18:31:26.062 DEBUG 10572 --- [main] c.s.c.digibooky.DigibookyApplication     : Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-03-26 18:31:26.062  INFO 10572 --- [main] c.s.c.digibooky.DigibookyApplication     : No active profile set, falling back to default profiles: default
+2021-03-26 18:31:27.432  INFO 10572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-03-26 18:31:27.445  INFO 10572 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-26 18:31:27.445  INFO 10572 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-03-26 18:31:27.522  INFO 10572 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-26 18:31:27.522  INFO 10572 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1372 ms
+2021-03-26 18:31:27.832  INFO 10572 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-26 18:31:28.641  INFO 10572 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-26 18:31:28.651  INFO 10572 --- [main] c.s.c.digibooky.DigibookyApplication     : Started DigibookyApplication in 3.697 seconds (JVM running for 4.757)
+2021-03-26 18:31:38.151  INFO 10572 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-26 18:31:38.151  INFO 10572 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-26 18:31:38.151  INFO 10572 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-03-26 18:34:08.865  INFO 9752 --- [main] c.s.c.digibooky.DigibookyApplication     : Starting DigibookyApplication using Java 15.0.2 on FIN-32L9TT2 with PID 9752 (C:\_development\switchfullyPractice\digibooky-curiosity\war\target\classes started by lkrebs in C:\_development\switchfullyPractice\digibooky-curiosity)
+2021-03-26 18:34:08.871 DEBUG 9752 --- [main] c.s.c.digibooky.DigibookyApplication     : Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-03-26 18:34:08.872  INFO 9752 --- [main] c.s.c.digibooky.DigibookyApplication     : No active profile set, falling back to default profiles: default
+2021-03-26 18:34:10.702  INFO 9752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-03-26 18:34:10.712  INFO 9752 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-26 18:34:10.712  INFO 9752 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-03-26 18:34:10.815  INFO 9752 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-26 18:34:10.815  INFO 9752 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1823 ms
+2021-03-26 18:34:11.161  INFO 9752 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-26 18:34:11.945  INFO 9752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-26 18:34:11.952  INFO 9752 --- [main] c.s.c.digibooky.DigibookyApplication     : Started DigibookyApplication in 4.268 seconds (JVM running for 5.675)
+2021-03-26 18:34:20.032  INFO 9752 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-26 18:34:20.032  INFO 9752 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-26 18:34:20.032  INFO 9752 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-03-26 18:34:21.792  INFO 9752 --- [http-nio-8081-exec-7] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 570 ms
+2021-03-26 18:34:32.935  INFO 9752 --- [http-nio-8081-exec-8] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 18:34:32.935  INFO 9752 --- [http-nio-8081-exec-8] c.s.c.d.s.BookServiceImplementation      : Getting all books by provided keywords
+2021-03-26 18:34:32.935  INFO 9752 --- [http-nio-8081-exec-8] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 18:34:46.712  INFO 9752 --- [http-nio-8081-exec-9] c.s.c.d.api.controllers.BookController   : Creating a book
+2021-03-26 18:34:46.712  INFO 9752 --- [http-nio-8081-exec-9] c.s.c.d.api.dtomappers.BookMapper        : Returned Book entity based on RegisterDtoBook
+2021-03-26 18:34:46.720  INFO 9752 --- [http-nio-8081-exec-9] c.s.c.d.api.controllers.BookController   : Registering a new book with UUID a2a2ca10-3633-4262-b61b-fa8881ec54ef
+2021-03-26 18:34:46.721  INFO 9752 --- [http-nio-8081-exec-9] c.s.c.d.s.BookServiceImplementation      : Adding one book
+2021-03-26 18:34:46.721  INFO 9752 --- [http-nio-8081-exec-9] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 18:34:49.102  INFO 9752 --- [http-nio-8081-exec-10] c.s.c.d.api.controllers.BookController   : Creating a book
+2021-03-26 18:34:49.102  INFO 9752 --- [http-nio-8081-exec-10] c.s.c.d.api.dtomappers.BookMapper        : Returned Book entity based on RegisterDtoBook
+2021-03-26 18:34:49.102  INFO 9752 --- [http-nio-8081-exec-10] c.s.c.d.api.controllers.BookController   : Registering a new book with UUID bde1a2f5-b4e2-47f1-9011-203bca0528ee
+2021-03-26 18:34:49.102  INFO 9752 --- [http-nio-8081-exec-10] c.s.c.d.s.BookServiceImplementation      : Adding one book
+2021-03-26 18:34:49.102  INFO 9752 --- [http-nio-8081-exec-10] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 18:35:08.242  INFO 9752 --- [http-nio-8081-exec-1] c.s.c.d.domain.entities.books.Author     : Author's first name was null, so an empty string was provided to register the book
+2021-03-26 18:35:08.242  INFO 9752 --- [http-nio-8081-exec-1] c.s.c.d.api.controllers.BookController   : Creating a book
+2021-03-26 18:35:08.242  INFO 9752 --- [http-nio-8081-exec-1] c.s.c.d.api.dtomappers.BookMapper        : Returned Book entity based on RegisterDtoBook
+2021-03-26 18:35:08.242  INFO 9752 --- [http-nio-8081-exec-1] c.s.c.d.api.controllers.BookController   : Registering a new book with UUID b64a4d05-36f8-4700-b8f5-f2fa441e3ca1
+2021-03-26 18:35:08.242  INFO 9752 --- [http-nio-8081-exec-1] c.s.c.d.s.BookServiceImplementation      : Adding one book
+2021-03-26 18:35:08.250  INFO 9752 --- [http-nio-8081-exec-1] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 18:35:16.621  INFO 9752 --- [http-nio-8081-exec-2] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 18:35:16.621  INFO 9752 --- [http-nio-8081-exec-2] c.s.c.d.s.BookServiceImplementation      : Getting all books by provided keywords
+2021-03-26 18:35:16.622  INFO 9752 --- [http-nio-8081-exec-2] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 18:35:16.622  INFO 9752 --- [http-nio-8081-exec-2] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 18:35:16.622  INFO 9752 --- [http-nio-8081-exec-2] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 18:35:16.622  INFO 9752 --- [http-nio-8081-exec-2] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 18:36:15.601  INFO 9752 --- [http-nio-8081-exec-3] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 18:36:15.601  INFO 9752 --- [http-nio-8081-exec-3] c.s.c.d.s.BookServiceImplementation      : Getting all books by provided keywords
+2021-03-26 18:36:15.601  INFO 9752 --- [http-nio-8081-exec-3] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 18:36:15.601  INFO 9752 --- [http-nio-8081-exec-3] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 18:36:15.601  INFO 9752 --- [http-nio-8081-exec-3] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 18:37:57.577  INFO 9752 --- [http-nio-8081-exec-7] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 18:37:57.578  INFO 9752 --- [http-nio-8081-exec-7] c.s.c.d.s.BookServiceImplementation      : Getting all books by provided keywords
+2021-03-26 18:37:57.578  INFO 9752 --- [http-nio-8081-exec-7] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 18:38:08.932  INFO 9752 --- [http-nio-8081-exec-8] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 18:38:08.932  INFO 9752 --- [http-nio-8081-exec-8] c.s.c.d.s.BookServiceImplementation      : Getting all books by provided keywords
+2021-03-26 18:38:08.932  INFO 9752 --- [http-nio-8081-exec-8] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 18:38:28.339  INFO 9752 --- [http-nio-8081-exec-9] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 18:38:28.339  INFO 9752 --- [http-nio-8081-exec-9] c.s.c.d.s.BookServiceImplementation      : Getting all books by provided keywords
+2021-03-26 18:38:28.339  INFO 9752 --- [http-nio-8081-exec-9] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 18:38:40.237  INFO 9752 --- [http-nio-8081-exec-10] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 18:38:40.237  INFO 9752 --- [http-nio-8081-exec-10] c.s.c.d.s.BookServiceImplementation      : Getting all books by provided keywords
+2021-03-26 18:38:40.237  INFO 9752 --- [http-nio-8081-exec-10] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 18:38:40.237  INFO 9752 --- [http-nio-8081-exec-10] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 18:38:40.237  INFO 9752 --- [http-nio-8081-exec-10] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 18:38:40.237  INFO 9752 --- [http-nio-8081-exec-10] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 18:38:46.049  INFO 9752 --- [http-nio-8081-exec-1] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 18:38:46.049  INFO 9752 --- [http-nio-8081-exec-1] c.s.c.d.s.BookServiceImplementation      : Getting all books by provided keywords
+2021-03-26 18:38:46.049  INFO 9752 --- [http-nio-8081-exec-1] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 18:39:49.808  INFO 9752 --- [http-nio-8081-exec-4] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 18:39:49.808  INFO 9752 --- [http-nio-8081-exec-4] c.s.c.d.s.BookServiceImplementation      : Getting all books by provided keywords
+2021-03-26 18:39:49.808  INFO 9752 --- [http-nio-8081-exec-4] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 18:39:49.808  INFO 9752 --- [http-nio-8081-exec-4] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 18:39:49.808  INFO 9752 --- [http-nio-8081-exec-4] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 18:39:49.808  INFO 9752 --- [http-nio-8081-exec-4] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 18:40:18.603  INFO 7524 --- [main] c.s.c.digibooky.DigibookyApplication     : Starting DigibookyApplication using Java 15.0.2 on FIN-32L9TT2 with PID 7524 (C:\_development\switchfullyPractice\digibooky-curiosity\war\target\classes started by lkrebs in C:\_development\switchfullyPractice\digibooky-curiosity)
+2021-03-26 18:40:18.612 DEBUG 7524 --- [main] c.s.c.digibooky.DigibookyApplication     : Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-03-26 18:40:18.617  INFO 7524 --- [main] c.s.c.digibooky.DigibookyApplication     : No active profile set, falling back to default profiles: default
+2021-03-26 18:40:20.179  INFO 7524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-26 18:40:20.188  INFO 7524 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-26 18:40:20.188  INFO 7524 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-03-26 18:40:20.329  INFO 7524 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-26 18:40:20.329  INFO 7524 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1590 ms
+2021-03-26 18:40:20.812  INFO 7524 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-26 18:40:21.879  WARN 7524 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2021-03-26 18:40:21.879  INFO 7524 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-26 18:40:21.888  INFO 7524 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-03-26 18:40:21.912  INFO 7524 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-03-26 18:40:21.938 ERROR 7524 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+

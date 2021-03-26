@@ -28,17 +28,18 @@ class BookControllerTest {
     @Test
     void whenGettingBookById_thenCorrectBookIsReturned() {
         Author author = new Author("john", "doe");
-        Book testBook = new Book("f87c152c-8d47-11eb-8dcd-0242ac130003", "isbn", author, "title", "summary");
+        Book testBook = new Book("isbn", author, "title", "summary");
+        String BookId = testBook.getId().toString();
         bookDatabase.createBook(testBook);
 
         DtoBookWithSummary dtoBookWithSummary = new DtoBookWithSummary()
-                .setID(UUID.fromString("f87c152c-8d47-11eb-8dcd-0242ac130003"))
+                .setID(UUID.fromString(BookId))
                 .setISBN("isbn")
                 .setAuthor(author)
                 .setTitle("title")
                 .setSummary("summary");
 
-        DtoBookWithSummary getOneResult = bookController.getOneBook("f87c152c-8d47-11eb-8dcd-0242ac130003");
+        DtoBookWithSummary getOneResult = bookController.getOneBook(BookId);
 
         assertThat(getOneResult.getSummary()).isEqualTo(dtoBookWithSummary.getSummary());
         assertThat(getOneResult.getTitle()).isEqualTo(dtoBookWithSummary.getTitle());
