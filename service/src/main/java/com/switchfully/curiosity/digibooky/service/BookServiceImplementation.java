@@ -33,9 +33,10 @@ public class BookServiceImplementation implements BookService {
     }
 
     @Override
-    public Collection<Book> getAllBooks(String titleKeyword) {
+    public Collection<Book> getAllBooks(String titleKeyword, String isbnKeyword) {
         return bookRepository.getAllBooks().stream()
                 .filter(book -> titleKeyword == null || isMatchingNonCaseSensitive(titleKeyword, book.getTitle()) || isMatchingRegex(titleKeyword, book.getTitle()))
+                .filter(book -> isbnKeyword == null || isMatchingIsbn(isbnKeyword, book.getISBN()) || isMatchingRegex(isbnKeyword, book.getISBN()))
                 .collect(Collectors.toList());
     }
 
@@ -47,6 +48,10 @@ public class BookServiceImplementation implements BookService {
     @Override
     public Book addOneBook(Book book) {
         return bookRepository.addOneBook(book);
+    }
+
+    private boolean isMatchingIsbn(String isbnKeyword, String isbn) {
+        return isbn.contains(isbnKeyword);
     }
 
     private boolean isMatchingNonCaseSensitive(String keyword, String title){

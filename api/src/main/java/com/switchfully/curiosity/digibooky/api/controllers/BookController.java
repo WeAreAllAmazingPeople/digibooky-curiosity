@@ -34,9 +34,9 @@ public class BookController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public List<DtoBook> getAllBooks(@RequestParam(required = false) String title) {
+    public List<DtoBook> getAllBooks(@RequestParam(required = false) String title, @RequestParam(required = false) String isbn) {
         LOGGER.info("Getting all the books");
-        return bookMapper.changeListOfBooksToDto(bookService.getAllBooks(title));
+        return bookMapper.changeListOfBooksToDto(bookService.getAllBooks(title, isbn));
     }
 
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
