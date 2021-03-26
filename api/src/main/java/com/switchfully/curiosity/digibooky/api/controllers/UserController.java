@@ -23,9 +23,9 @@ public class UserController {
         this.userMapper = userMapper;
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE) //TODO Do not forget exception handling
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public DtoUser createUser(@RequestBody RegisterDtoUser registerDtoUser) { //TODO Discuss try/catch
+    public DtoUser createUser(@RequestBody RegisterDtoUser registerDtoUser) {
         //Create user
         User userToRegister = userMapper.changeRegisterDtoToUser(registerDtoUser);
 
@@ -36,3 +36,4 @@ public class UserController {
         return userMapper.changeUserToDto(createdUser);
     }
 }
+

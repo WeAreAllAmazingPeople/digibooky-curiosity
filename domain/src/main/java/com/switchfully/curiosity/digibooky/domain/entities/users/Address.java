@@ -7,7 +7,7 @@ public final class Address {
     private final String city;
 
     public Address(String streetName, String streetNumber, String postCode, String city) {
-        if (!isValidAddress(city)) throw new IllegalArgumentException("Illegal argument was given");
+        if (!isValidAddress(city)) throw new IllegalArgumentException("Cannot create address, illegal arguments provided");
         this.streetName = streetName;
         this.streetNumber = streetNumber;
         this.postCode = postCode;
