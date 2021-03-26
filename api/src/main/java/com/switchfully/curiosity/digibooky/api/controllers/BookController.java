@@ -48,9 +48,9 @@ public class BookController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public DtoBook addOneBook(@RequestBody RegisterDtoBook registerDtoBook) {
-        LOGGER.info("Attempting to create book");
+        LOGGER.info("Creating a book");
         Book bookToRegister = bookMapper.changeRegisterDtoToBook(registerDtoBook);
-        LOGGER.info("Registering a book with UUID " + bookToRegister.getId());
+        LOGGER.info("Registering a new book with UUID " + bookToRegister.getId());
         return bookMapper.changeBookToDto(bookService.addOneBook(bookToRegister));
     }
 }

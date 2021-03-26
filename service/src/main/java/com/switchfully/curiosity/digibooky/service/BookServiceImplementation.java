@@ -41,7 +41,7 @@ public class BookServiceImplementation implements BookService {
 
     @Override
     public Book addOneBook(Book book) {
-        LOGGER.info("Getting one book");
+        LOGGER.info("Adding one book");
         return bookRepository.addOneBook(book);
     }
 
