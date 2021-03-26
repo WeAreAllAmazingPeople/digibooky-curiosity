@@ -10,6 +10,7 @@ import java.io.IOException;
 public class ControllerExceptionHandler {
 
     @ExceptionHandler(IllegalArgumentException.class)
+    //TODO fix typo
     public void handleIllegalArgumenbtException(IllegalArgumentException exception, HttpServletResponse response) throws IOException{
         response.sendError(HttpServletResponse.SC_BAD_REQUEST, exception.getMessage());
     }

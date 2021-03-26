@@ -26,4 +26,8 @@ public final class Author {
     public String getLastname() {
         return lastname;
     }
+
+    public String retrieveFullname() {
+        return firstname + " " + lastname;
+    }
 }

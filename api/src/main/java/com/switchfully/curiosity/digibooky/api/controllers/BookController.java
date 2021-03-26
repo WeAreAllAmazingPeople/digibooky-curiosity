@@ -34,9 +34,9 @@ public class BookController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public List<DtoBook> getAllBooks(@RequestParam(required = false) String title, @RequestParam(required = false) String isbn) {
+    public List<DtoBook> getAllBooks(@RequestParam(required = false) String title, @RequestParam(required = false) String isbn, @RequestParam(required = false) String authorName) {
         LOGGER.info("Getting all the books");
-        return bookMapper.changeListOfBooksToDto(bookService.getAllBooks(title, isbn));
+        return bookMapper.changeListOfBooksToDto(bookService.getAllBooks(title, isbn, authorName));
     }
 
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -50,6 +50,7 @@ public class BookController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public DtoBook addOneBook(@RequestBody RegisterDtoBook registerDtoBook) {
+        LOGGER.info("Attempting to create book");
         try {
             Book bookToRegister = bookMapper.changeRegisterDtoToBook(registerDtoBook);
             LOGGER.info("Registering a book with UUID " + bookToRegister.getId());

@@ -1,5 +1,6 @@
 package com.switchfully.curiosity.digibooky.service;
 
+import com.switchfully.curiosity.digibooky.domain.entities.books.Author;
 import com.switchfully.curiosity.digibooky.domain.entities.books.Book;
 import com.switchfully.curiosity.digibooky.domain.repositories.BookRepository;
 import org.slf4j.Logger;
@@ -8,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.regex.*;
 
@@ -33,12 +31,15 @@ public class BookServiceImplementation implements BookService {
     }
 
     @Override
-    public Collection<Book> getAllBooks(String titleKeyword, String isbnKeyword) {
+    public Collection<Book> getAllBooks(String titleKeyword, String isbnKeyword, String authorKeyword) {
+
         return bookRepository.getAllBooks().stream()
                 .filter(book -> titleKeyword == null || isMatchingNonCaseSensitive(titleKeyword, book.getTitle()) || isMatchingRegex(titleKeyword, book.getTitle()))
                 .filter(book -> isbnKeyword == null || isMatchingIsbn(isbnKeyword, book.getISBN()) || isMatchingRegex(isbnKeyword, book.getISBN()))
+                .filter(book -> authorKeyword == null || authorKeyword.equals(" ") || isMatchingAuthorNonCaseSensitive(authorKeyword, book.getAuthor()) || isMatchingRegex(authorKeyword, book.getAuthor()))
                 .collect(Collectors.toList());
     }
+
 
     @Override
     public Book getBookById(UUID uuid) {
@@ -54,12 +55,20 @@ public class BookServiceImplementation implements BookService {
         return isbn.contains(isbnKeyword);
     }
 
-    private boolean isMatchingNonCaseSensitive(String keyword, String title){
+    private boolean isMatchingNonCaseSensitive(String keyword, String title) {
         return title.toLowerCase().contains(keyword.toLowerCase());
+    }
+
+    private boolean isMatchingAuthorNonCaseSensitive(String authorKeyword, Author author) {
+        return author.retrieveFullname().toLowerCase().contains(authorKeyword.toLowerCase());
     }
 
     private boolean isMatchingRegex(String keyword, String title) {
         return Pattern.matches(keyword, title.toLowerCase());
+    }
+
+    private boolean isMatchingRegex(String keyword, Author author) {
+        return Pattern.matches(keyword, author.retrieveFullname().toLowerCase());
     }
 
 }
