@@ -13,11 +13,6 @@ public class BookDatabaseImplementation implements BookDatabase {
 
     private final Map<UUID, Book> books = new HashMap<>();
 
-    //for testing purpose
-    public void addBook(Book book){
-        books.put(book.getId(), book);
-    }
-
     @Override
     public Collection<Book> getAllBooks() {
         return books.values();
@@ -33,5 +28,4 @@ public class BookDatabaseImplementation implements BookDatabase {
         books.put(book.getId(), book);
         return books.get(book.getId());
     }
-
 }

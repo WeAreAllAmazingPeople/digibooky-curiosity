@@ -18,4 +18,5 @@ public class ControllerExceptionHandler {
         LOGGER.warn(exception.getMessage(), exception);
         response.sendError(HttpServletResponse.SC_BAD_REQUEST, exception.getMessage());
     }
+
 }
