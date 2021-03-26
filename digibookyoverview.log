@@ -247,3 +247,47 @@ java.lang.IllegalArgumentException: Cannot create book, invalid input
 2021-03-26 12:56:11.359  INFO 4276 --- [http-nio-8080-exec-6] c.s.c.d.api.controllers.BookController   : Getting all the books
 2021-03-26 12:56:11.360  INFO 4276 --- [http-nio-8080-exec-6] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
 2021-03-26 12:56:11.360  INFO 4276 --- [http-nio-8080-exec-6] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on Book entity
+2021-03-26 14:16:31.527  INFO 11872 --- [main] c.s.c.digibooky.DigibookyApplication     : Starting DigibookyApplication using Java 15.0.2 on FIN-50SMTT2 with PID 11872 (C:\_development\digibooky-curiosity\war\target\classes started by echitul in C:\_development\digibooky-curiosity)
+2021-03-26 14:16:31.536 DEBUG 11872 --- [main] c.s.c.digibooky.DigibookyApplication     : Running with Spring Boot v2.4.4, Spring v5.3.5
+2021-03-26 14:16:31.538  INFO 11872 --- [main] c.s.c.digibooky.DigibookyApplication     : No active profile set, falling back to default profiles: default
+2021-03-26 14:16:35.704  INFO 11872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-26 14:16:35.724  INFO 11872 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-26 14:16:35.725  INFO 11872 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-03-26 14:16:35.958  INFO 11872 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-26 14:16:35.958  INFO 11872 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4230 ms
+2021-03-26 14:16:36.787  INFO 11872 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-26 14:16:38.625  INFO 11872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-26 14:16:38.661  INFO 11872 --- [main] c.s.c.digibooky.DigibookyApplication     : Started DigibookyApplication in 8.836 seconds (JVM running for 10.886)
+2021-03-26 14:16:38.811  INFO 11872 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-26 14:16:38.813  INFO 11872 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-26 14:16:38.816  INFO 11872 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-03-26 14:16:40.364  INFO 11872 --- [http-nio-8080-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 673 ms
+2021-03-26 14:17:09.960  INFO 11872 --- [http-nio-8080-exec-5] c.s.c.d.api.controllers.BookController   : Creating a book
+2021-03-26 14:17:09.964  INFO 11872 --- [http-nio-8080-exec-5] c.s.c.d.api.dtomappers.BookMapper        : Returned Book entity based on RegisterDtoBook
+2021-03-26 14:17:09.968  INFO 11872 --- [http-nio-8080-exec-5] c.s.c.d.api.controllers.BookController   : Registering a new book with UUID 924eb04b-6fb3-40ca-9a9a-18fcad8c8df3
+2021-03-26 14:17:09.971  INFO 11872 --- [http-nio-8080-exec-5] c.s.c.d.s.BookServiceImplementation      : Adding one book
+2021-03-26 14:17:09.974  INFO 11872 --- [http-nio-8080-exec-5] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 14:17:37.648  INFO 11872 --- [http-nio-8080-exec-6] c.s.c.d.domain.entities.books.Author     : Author's first name was null, so an empty string was provided to register the book
+2021-03-26 14:17:37.677  INFO 11872 --- [http-nio-8080-exec-6] c.s.c.d.api.controllers.BookController   : Creating a book
+2021-03-26 14:17:37.694  INFO 11872 --- [http-nio-8080-exec-6] c.s.c.d.api.dtomappers.BookMapper        : Returned Book entity based on RegisterDtoBook
+2021-03-26 14:17:37.700  INFO 11872 --- [http-nio-8080-exec-6] c.s.c.d.api.controllers.BookController   : Registering a new book with UUID 772de8b0-a6d7-435e-828f-9c15e30735ac
+2021-03-26 14:17:37.745  INFO 11872 --- [http-nio-8080-exec-6] c.s.c.d.s.BookServiceImplementation      : Adding one book
+2021-03-26 14:17:37.745  INFO 11872 --- [http-nio-8080-exec-6] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 14:17:50.629  INFO 11872 --- [http-nio-8080-exec-9] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 14:17:50.629  INFO 11872 --- [http-nio-8080-exec-9] c.s.c.d.s.BookServiceImplementation      : Getting all books by provided keywords
+2021-03-26 14:17:50.631  INFO 11872 --- [http-nio-8080-exec-9] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 14:17:50.639  INFO 11872 --- [http-nio-8080-exec-9] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 14:17:50.639  INFO 11872 --- [http-nio-8080-exec-9] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 14:18:24.744  INFO 11872 --- [http-nio-8080-exec-10] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 14:18:24.745  INFO 11872 --- [http-nio-8080-exec-10] c.s.c.d.s.BookServiceImplementation      : Getting all books by provided keywords
+2021-03-26 14:18:24.745  INFO 11872 --- [http-nio-8080-exec-10] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 14:18:24.745  INFO 11872 --- [http-nio-8080-exec-10] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 14:18:39.428  INFO 11872 --- [http-nio-8080-exec-1] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 14:18:39.429  INFO 11872 --- [http-nio-8080-exec-1] c.s.c.d.s.BookServiceImplementation      : Getting all books by provided keywords
+2021-03-26 14:18:39.429  INFO 11872 --- [http-nio-8080-exec-1] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 14:18:39.430  INFO 11872 --- [http-nio-8080-exec-1] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 14:18:39.453  INFO 11872 --- [http-nio-8080-exec-1] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book
+2021-03-26 14:20:31.707  INFO 11872 --- [http-nio-8080-exec-2] c.s.c.d.api.controllers.BookController   : Getting all the books
+2021-03-26 14:20:31.708  INFO 11872 --- [http-nio-8080-exec-2] c.s.c.d.s.BookServiceImplementation      : Getting all books by provided keywords
+2021-03-26 14:20:31.714  INFO 11872 --- [http-nio-8080-exec-2] c.s.c.d.api.dtomappers.BookMapper        : Returned list of DtoBooks based on all Books in database
+2021-03-26 14:20:31.715  INFO 11872 --- [http-nio-8080-exec-2] c.s.c.d.api.dtomappers.BookMapper        : Returned DtoBook based on book

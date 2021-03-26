@@ -7,13 +7,11 @@ import com.switchfully.curiosity.digibooky.domain.repositories.BookRepositoryImp
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Collection;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class BookServiceImplementationTest {
-
 
     private BookServiceImplementation bookService;
     private Book book1;

@@ -52,5 +52,4 @@ public class BookServiceImplementation implements BookService {
     private boolean isMatchingRegex(String keyword, String content) {
         return Pattern.matches(keyword, content.toLowerCase());
     }
-
 }
