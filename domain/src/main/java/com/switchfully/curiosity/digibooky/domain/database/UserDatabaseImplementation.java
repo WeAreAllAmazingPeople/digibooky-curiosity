@@ -18,6 +18,11 @@ public class UserDatabaseImplementation implements UserDatabase {
         return userMap.get(user.getId());
     }
 
+    @Override
+    public User getUserById(UUID userId) {
+        return userMap.get(userId);
+    }
+
     private void addUser(User user) {
         if (!isNewUser(user)) {
             throw new IllegalArgumentException("User already exists");
