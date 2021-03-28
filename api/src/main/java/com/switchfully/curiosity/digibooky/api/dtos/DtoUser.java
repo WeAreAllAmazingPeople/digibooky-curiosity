@@ -7,7 +7,7 @@ import java.util.UUID;
 public class DtoUser {
 
     private UUID id;
-    private String INSS;
+    private String inss;
     private String firstName;
     private String lastName;
     private String email;
@@ -22,12 +22,12 @@ public class DtoUser {
         return this;
     }
 
-    public String getINSS() {
-        return INSS;
+    public String getInss() {
+        return inss;
     }
 
-    public DtoUser setINSS(String INSS) {
-        this.INSS = INSS;
+    public DtoUser setInss(String inss) {
+        this.inss = inss;
         return this;
     }
 

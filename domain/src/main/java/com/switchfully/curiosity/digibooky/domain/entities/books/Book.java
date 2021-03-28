@@ -6,27 +6,27 @@ import java.util.UUID;
 public class Book {
 
     private final UUID id;
-    private final String ISBN;     //Option: TODO make value object with ISBN
+    private final String isbn;     //Option: TODO make value object with ISBN
     private final Author author;
     private final String title;
     private String summary;
     private boolean isAvailable = true;
 
-    public Book(String ISBN, Author author, String title, String summary) {
-        this(ISBN, author, title);
+    public Book(String isbn, Author author, String title, String summary) {
+        this(isbn, author, title);
         this.summary = summary;
     }
 
-    public Book(String ISBN, Author author, String title) {
-        validateInput(ISBN, author, title);
+    public Book(String isbn, Author author, String title) {
+        validateInput(isbn, author, title);
         this.id = UUID.randomUUID();
-        this.ISBN = ISBN;
+        this.isbn = isbn;
         this.author = author;
         this.title = title;
     }
 
-    private void validateInput(String ISBN, Author author, String title) {
-        if (ISBN == null || author.getLastname() == null || title == null)
+    private void validateInput(String isbn, Author author, String title) {
+        if (isbn == null || author.getLastname() == null || title == null)
             throw new IllegalArgumentException("Cannot create book, invalid input");
     }
 
@@ -41,8 +41,8 @@ public class Book {
         return isAvailable;
     }
 
-    public String getISBN() {
-        return ISBN;
+    public String getIsbn() {
+        return isbn;
     }
 
     public Author getAuthor() {

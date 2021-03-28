@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 import java.util.UUID;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
-import java.util.regex.*;
 
 @Component
 public class BookServiceImplementation implements BookService {
@@ -28,7 +28,7 @@ public class BookServiceImplementation implements BookService {
         LOGGER.info("Getting all books by provided keywords");
         return bookRepository.getAllBooks().stream()
                 .filter(book -> titleKeyword == null || isMatchingNonCaseSensitive(titleKeyword, book.getTitle()) || isMatchingRegex(titleKeyword, book.getTitle()))
-                .filter(book -> isbnKeyword == null || isMatchingNonCaseSensitive(isbnKeyword, book.getISBN()) || isMatchingRegex(isbnKeyword, book.getISBN()))
+                .filter(book -> isbnKeyword == null || isMatchingNonCaseSensitive(isbnKeyword, book.getIsbn()) || isMatchingRegex(isbnKeyword, book.getIsbn()))
                 .filter(book -> authorKeyword == null || authorKeyword.equals(" ") || isMatchingNonCaseSensitive(authorKeyword, book.getAuthor().retrieveFullname()) || isMatchingRegex(authorKeyword, book.getAuthor().retrieveFullname()))
                 .collect(Collectors.toList());
     }

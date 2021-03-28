@@ -34,7 +34,7 @@ class BookControllerTest {
 
         DtoBookWithSummary dtoBookWithSummary = new DtoBookWithSummary()
                 .setId(UUID.fromString(BookId))
-                .setISBN("isbn")
+                .setIsbn("isbn")
                 .setAuthor(author)
                 .setTitle("title")
                 .setSummary("summary");
@@ -43,7 +43,7 @@ class BookControllerTest {
 
         assertThat(getOneResult.getSummary()).isEqualTo(dtoBookWithSummary.getSummary());
         assertThat(getOneResult.getTitle()).isEqualTo(dtoBookWithSummary.getTitle());
-        assertThat(getOneResult.getISBN()).isEqualTo(dtoBookWithSummary.getISBN());
+        assertThat(getOneResult.getIsbn()).isEqualTo(dtoBookWithSummary.getIsbn());
     }
 
 }

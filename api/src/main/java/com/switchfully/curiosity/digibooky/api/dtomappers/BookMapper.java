@@ -27,10 +27,10 @@ public class BookMapper {
     public DtoBook changeBookToDtoBook(Book book) {
         LOGGER.info("Returned DtoBook based on book");
         return new DtoBook()
-                .setID(book.getId())
+                .setId(book.getId())
                 .setAuthor(book.getAuthor())
                 .setTitle(book.getTitle())
-                .setISBN(book.getISBN());
+                .setIsbn(book.getIsbn());
     }
 
     public DtoBookWithSummary changeBookToDtoBookWithSummary(Book book) {
@@ -40,13 +40,13 @@ public class BookMapper {
                 .setId(book.getId())
                 .setAuthor(book.getAuthor())
                 .setTitle(book.getTitle())
-                .setISBN(book.getISBN())
+                .setIsbn(book.getIsbn())
                 .setSummary(book.getSummary());
     }
 
     public Book changeCreateDtoBookToBook(CreateDtoBook createDtoBook) {
         LOGGER.info("Returned Book entity based on RegisterDtoBook");
-        return new Book(createDtoBook.getISBN(),
+        return new Book(createDtoBook.getIsbn(),
                 createDtoBook.getAuthor(),
                 createDtoBook.getTitle(),
                 createDtoBook.getSummary());

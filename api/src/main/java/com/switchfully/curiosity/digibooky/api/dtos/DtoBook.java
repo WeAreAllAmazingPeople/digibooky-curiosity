@@ -6,33 +6,33 @@ import java.util.UUID;
 
 public class DtoBook {
 
-    private String ISBN;
+    private String isbn;
     private Author author;
     private String title;
     private UUID id;
 
-    public DtoBook setTitle(String title){
+    public DtoBook setTitle(String title) {
         this.title = title;
         return this;
     }
 
-    public DtoBook setISBN(String ISBN){
-        this.ISBN = ISBN;
+    public DtoBook setIsbn(String isbn) {
+        this.isbn = isbn;
         return this;
     }
 
-    public DtoBook setAuthor( Author author){
+    public DtoBook setAuthor(Author author) {
         this.author = author;
         return this;
     }
 
-    public DtoBook setID( UUID id){
+    public DtoBook setId(UUID id) {
         this.id = id;
         return this;
     }
 
-    public String getISBN() {
-        return ISBN;
+    public String getIsbn() {
+        return isbn;
     }
 
     public Author getAuthor() {

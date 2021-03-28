@@ -10,7 +10,7 @@ public class CreateDtoUser {
     private String firstName;
     private Address address;
 
-    public String getINSS() {
+    public String getInss() {
         return INSS;
     }
 

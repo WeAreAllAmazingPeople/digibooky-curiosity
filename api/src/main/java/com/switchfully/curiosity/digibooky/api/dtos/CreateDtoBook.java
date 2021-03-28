@@ -9,13 +9,13 @@ public class CreateDtoBook {
 
     private final Logger LOGGER = LoggerFactory.getLogger(CreateDtoBook.class);
 
-    private String ISBN;
+    private String isbn;
     private Author author;
     private String title;
     private String summary;
 
-    public CreateDtoBook setISBN(String ISBN) {
-        this.ISBN = ISBN;
+    public CreateDtoBook setIsbn(String isbn) {
+        this.isbn = isbn;
         return this;
     }
 
@@ -35,8 +35,8 @@ public class CreateDtoBook {
     }
 
 
-    public String getISBN() {
-        return ISBN;
+    public String getIsbn() {
+        return isbn;
     }
 
     public Author getAuthor() {

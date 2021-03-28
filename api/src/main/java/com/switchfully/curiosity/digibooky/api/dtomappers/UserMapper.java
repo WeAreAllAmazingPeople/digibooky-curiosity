@@ -10,7 +10,7 @@ public class UserMapper {
 
     public User changeCreateDtoUserToUser(CreateDtoUser createDtoUser) {
         return new User(
-                createDtoUser.getINSS(),
+                createDtoUser.getInss(),
                 createDtoUser.getLastName(),
                 createDtoUser.getFirstName(),
                 createDtoUser.getEmail(),
@@ -22,7 +22,7 @@ public class UserMapper {
         //BUILDER SETTERS ON (FLUENT API)
         return new DtoUser()
                 .setId(user.getId())
-                .setINSS(user.getInss())
+                .setInss(user.getInss())
                 .setLastName(user.getLastname())
                 .setFirstName(user.getFirstname())
                 .setEmail(user.getEmail())

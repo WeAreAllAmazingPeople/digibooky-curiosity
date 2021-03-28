@@ -4,6 +4,7 @@ import java.util.UUID;
 
 public class User {
     private static final String EMAIL_FORMAT = "^\\w+@\\w+\\.\\w+$";
+
     private final UUID id;
     private final String inss;    //TODO make value object
     private final String lastname;
@@ -30,10 +31,6 @@ public class User {
                 && email != null
                 && email.matches(EMAIL_FORMAT)
                 && address != null;
-    }
-
-    public static String getEmailFormat() {
-        return EMAIL_FORMAT;
     }
 
     public UUID getId() {

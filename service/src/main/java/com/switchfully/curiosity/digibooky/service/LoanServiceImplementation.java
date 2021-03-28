@@ -43,7 +43,7 @@ public class LoanServiceImplementation implements LoanService {
 
     private Book getBookByIsbn(String isbn) {
         Optional<Book> optionalBook = bookRepository.getAllBooks().stream()
-                .filter(book -> isbn.equals(book.getISBN()))
+                .filter(book -> isbn.equals(book.getIsbn()))
                 .filter(Book::isAvailable)
                 .findAny();
         if (optionalBook.isEmpty()) { // No book matching isbn available.
