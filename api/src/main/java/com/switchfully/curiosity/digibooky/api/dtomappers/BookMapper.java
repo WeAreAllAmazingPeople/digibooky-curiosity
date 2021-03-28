@@ -2,7 +2,7 @@ package com.switchfully.curiosity.digibooky.api.dtomappers;
 
 import com.switchfully.curiosity.digibooky.api.dtos.CreateDtoBook;
 import com.switchfully.curiosity.digibooky.api.dtos.DtoBook;
-import com.switchfully.curiosity.digibooky.api.dtos.DtoBookWithSummary;
+import com.switchfully.curiosity.digibooky.api.dtos.DtoBookWithoutSummary;
 import com.switchfully.curiosity.digibooky.domain.entities.books.Book;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,26 +17,26 @@ public class BookMapper {
 
     private final Logger LOGGER = LoggerFactory.getLogger(BookMapper.class);
 
-    public List<DtoBook> changeCollectionOfBooksToListOfDtoBooks(Collection<Book> booksToChange) {
-        LOGGER.info("Returned list of DtoBooks based on all Books in database");
+    public List<DtoBookWithoutSummary> changeCollectionOfBooksToListOfDtoBooks(Collection<Book> booksToChange) {
+        LOGGER.info("Returned list of DtoBookWithoutSummary based on all Books in database");
         return booksToChange.stream()
-                .map(this::changeBookToDtoBook)
+                .map(this::changeBookToDtoBookWithoutSummary)
                 .collect(Collectors.toList());
     }
 
-    public DtoBook changeBookToDtoBook(Book book) {
-        LOGGER.info("Returned DtoBook based on book");
-        return new DtoBook()
+    public DtoBookWithoutSummary changeBookToDtoBookWithoutSummary(Book book) {
+        LOGGER.info("Returned DtoBookWithoutSummary based on book");
+        return new DtoBookWithoutSummary()
                 .setId(book.getId())
                 .setAuthor(book.getAuthor())
                 .setTitle(book.getTitle())
                 .setIsbn(book.getIsbn());
     }
 
-    public DtoBookWithSummary changeBookToDtoBookWithSummary(Book book) {
-        LOGGER.info("Returned DtoBookWithSummary based on book");
+    public DtoBook changeBookToDtoBook(Book book) {
+        LOGGER.info("Returned DtoBook based on book");
         if (book == null) throw new IllegalArgumentException("No book was found");
-        return new DtoBookWithSummary()
+        return new DtoBook()
                 .setId(book.getId())
                 .setAuthor(book.getAuthor())
                 .setTitle(book.getTitle())
@@ -45,7 +45,7 @@ public class BookMapper {
     }
 
     public Book changeCreateDtoBookToBook(CreateDtoBook createDtoBook) {
-        LOGGER.info("Returned Book entity based on RegisterDtoBook");
+        LOGGER.info("Returned Book entity based on CreateDtoBook");
         return new Book(createDtoBook.getIsbn(),
                 createDtoBook.getAuthor(),
                 createDtoBook.getTitle(),

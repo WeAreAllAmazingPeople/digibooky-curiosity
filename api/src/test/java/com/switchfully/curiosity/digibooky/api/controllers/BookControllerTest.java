@@ -1,7 +1,7 @@
 package com.switchfully.curiosity.digibooky.api.controllers;
 
 import com.switchfully.curiosity.digibooky.api.dtomappers.BookMapper;
-import com.switchfully.curiosity.digibooky.api.dtos.DtoBookWithSummary;
+import com.switchfully.curiosity.digibooky.api.dtos.DtoBook;
 import com.switchfully.curiosity.digibooky.domain.database.BookDatabaseImplementation;
 import com.switchfully.curiosity.digibooky.domain.entities.books.Author;
 import com.switchfully.curiosity.digibooky.domain.entities.books.Book;
@@ -32,18 +32,18 @@ class BookControllerTest {
         String BookId = testBook.getId().toString();
         bookDatabase.createBook(testBook);
 
-        DtoBookWithSummary dtoBookWithSummary = new DtoBookWithSummary()
+        DtoBook dtoBook = new DtoBook()
                 .setId(UUID.fromString(BookId))
                 .setIsbn("isbn")
                 .setAuthor(author)
                 .setTitle("title")
                 .setSummary("summary");
 
-        DtoBookWithSummary getOneResult = bookController.getBookById(BookId);
+        DtoBook getOneResult = bookController.getBookById(BookId);
 
-        assertThat(getOneResult.getSummary()).isEqualTo(dtoBookWithSummary.getSummary());
-        assertThat(getOneResult.getTitle()).isEqualTo(dtoBookWithSummary.getTitle());
-        assertThat(getOneResult.getIsbn()).isEqualTo(dtoBookWithSummary.getIsbn());
+        assertThat(getOneResult.getSummary()).isEqualTo(dtoBook.getSummary());
+        assertThat(getOneResult.getTitle()).isEqualTo(dtoBook.getTitle());
+        assertThat(getOneResult.getIsbn()).isEqualTo(dtoBook.getIsbn());
     }
 
 }

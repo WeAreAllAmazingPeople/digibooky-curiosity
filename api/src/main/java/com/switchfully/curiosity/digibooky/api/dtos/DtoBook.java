@@ -10,6 +10,7 @@ public class DtoBook {
     private Author author;
     private String title;
     private UUID id;
+    private String summary;
 
     public DtoBook setTitle(String title) {
         this.title = title;
@@ -31,19 +32,30 @@ public class DtoBook {
         return this;
     }
 
-    public String getIsbn() {
-        return isbn;
+    public DtoBook setSummary(String summary) {
+        this.summary = summary;
+        return this;
     }
 
-    public Author getAuthor() {
-        return author;
+    public String getSummary() {
+        return summary;
+    }
+
+    public String getIsbn() {
+        return isbn;
     }
 
     public String getTitle() {
         return title;
     }
 
+    public Author getAuthor() {
+        return author;
+    }
+
     public UUID getId() {
         return id;
     }
+
+
 }

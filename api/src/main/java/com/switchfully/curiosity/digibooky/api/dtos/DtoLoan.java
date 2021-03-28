@@ -7,7 +7,7 @@ public class DtoLoan {
 
     private UUID id; //Id of transaction (loan)
     private DtoUser user;
-    private DtoBookWithSummary book;
+    private DtoBook book;
     private LocalDate dueDate;
 
     public UUID getId() {
@@ -28,11 +28,11 @@ public class DtoLoan {
         return this;
     }
 
-    public DtoBookWithSummary getBook() {
+    public DtoBook getBook() {
         return book;
     }
 
-    public DtoLoan setBook(DtoBookWithSummary book) {
+    public DtoLoan setBook(DtoBook book) {
         this.book = book;
         return this;
     }

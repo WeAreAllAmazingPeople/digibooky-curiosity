@@ -19,7 +19,7 @@ public class LoanMapper {
 
     public DtoLoan changeLoanToDtoLoan(Loan loan) {
         return new DtoLoan()
-                .setBook(bookMapper.changeBookToDtoBookWithSummary(loan.getBook()))
+                .setBook(bookMapper.changeBookToDtoBook(loan.getBook()))
                 .setId(loan.getId())
                 .setDueDate(loan.getDueDate())
                 .setUser(userMapper.changeUserToDtoUser(loan.getUser()));
