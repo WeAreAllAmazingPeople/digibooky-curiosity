@@ -17,11 +17,11 @@ public class LoanMapper {
         this.userMapper = userMapper;
     }
 
-    public DtoLoan changeLoanToDto(Loan loan) {
+    public DtoLoan changeLoanToDtoLoan(Loan loan) {
         return new DtoLoan()
-                .setBook(bookMapper.changeBookToDtoWithSummary(loan.getBook()))
+                .setBook(bookMapper.changeBookToDtoBookWithSummary(loan.getBook()))
                 .setId(loan.getId())
                 .setDueDate(loan.getDueDate())
-                .setUser(userMapper.changeUserToDto(loan.getUser()));
+                .setUser(userMapper.changeUserToDtoUser(loan.getUser()));
     }
 }

@@ -1,9 +1,9 @@
 package com.switchfully.curiosity.digibooky.api.controllers;
 
 import com.switchfully.curiosity.digibooky.api.dtomappers.BookMapper;
+import com.switchfully.curiosity.digibooky.api.dtos.CreateDtoBook;
 import com.switchfully.curiosity.digibooky.api.dtos.DtoBook;
 import com.switchfully.curiosity.digibooky.api.dtos.DtoBookWithSummary;
-import com.switchfully.curiosity.digibooky.api.dtos.RegisterDtoBook;
 import com.switchfully.curiosity.digibooky.domain.entities.books.Book;
 import com.switchfully.curiosity.digibooky.service.BookService;
 import org.slf4j.Logger;
@@ -34,7 +34,7 @@ public class BookController {
     @ResponseStatus(HttpStatus.OK)
     public List<DtoBook> getAllBooks(@RequestParam(required = false) String title, @RequestParam(required = false) String isbn, @RequestParam(required = false) String authorName) {
         LOGGER.info("Getting all the books");
-        return bookMapper.changeListOfBooksToDto(bookService.getAllBooks(title, isbn, authorName));
+        return bookMapper.changeCollectionOfBooksToListOfDtoBooks(bookService.getAllBooks(title, isbn, authorName));
     }
 
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -42,16 +42,16 @@ public class BookController {
     public DtoBookWithSummary getOneBook(@PathVariable("id") String id) {
         LOGGER.info("Getting one book with UUID " + id);
         UUID uuid = UUID.fromString(id);
-        return bookMapper.changeBookToDtoWithSummary(bookService.getBookById(uuid));
+        return bookMapper.changeBookToDtoBookWithSummary(bookService.getBookById(uuid));
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public DtoBookWithSummary createBook(@RequestBody RegisterDtoBook registerDtoBook) {
+    public DtoBookWithSummary createBook(@RequestBody CreateDtoBook createDtoBook) {
         LOGGER.info("Creating a book");
-        Book bookToRegister = bookMapper.changeRegisterDtoToBook(registerDtoBook);
+        Book bookToRegister = bookMapper.changeCreateDtoBookToBook(createDtoBook);
         LOGGER.info("Registering a new book with UUID " + bookToRegister.getId());
-        return bookMapper.changeBookToDtoWithSummary(bookService.createBook(bookToRegister));
+        return bookMapper.changeBookToDtoBookWithSummary(bookService.createBook(bookToRegister));
     }
 }
 

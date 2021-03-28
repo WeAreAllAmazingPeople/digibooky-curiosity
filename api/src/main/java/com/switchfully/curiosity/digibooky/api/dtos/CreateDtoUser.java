@@ -2,7 +2,7 @@ package com.switchfully.curiosity.digibooky.api.dtos;
 
 import com.switchfully.curiosity.digibooky.domain.entities.users.Address;
 
-public class RegisterDtoUser {
+public class CreateDtoUser {
 
     private String INSS;
     private String email;
@@ -14,7 +14,7 @@ public class RegisterDtoUser {
         return INSS;
     }
 
-    public RegisterDtoUser setINSS(String INSS) {
+    public CreateDtoUser setINSS(String INSS) {
         this.INSS = INSS;
         return this;
     }
@@ -23,7 +23,7 @@ public class RegisterDtoUser {
         return email;
     }
 
-    public RegisterDtoUser setEmail(String email) {
+    public CreateDtoUser setEmail(String email) {
         this.email = email;
         return this;
     }
@@ -32,7 +32,7 @@ public class RegisterDtoUser {
         return lastName;
     }
 
-    public RegisterDtoUser setLastName(String lastName) {
+    public CreateDtoUser setLastName(String lastName) {
         this.lastName = lastName;
         return this;
     }
@@ -41,7 +41,7 @@ public class RegisterDtoUser {
         return firstName;
     }
 
-    public RegisterDtoUser setFirstName(String firstName) {
+    public CreateDtoUser setFirstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
@@ -50,7 +50,7 @@ public class RegisterDtoUser {
         return address;
     }
 
-    public RegisterDtoUser setAddress(Address address) {
+    public CreateDtoUser setAddress(Address address) {
         this.address = address;
         return this;
     }

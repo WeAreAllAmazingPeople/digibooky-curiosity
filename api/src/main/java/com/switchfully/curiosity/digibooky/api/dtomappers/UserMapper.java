@@ -1,24 +1,24 @@
 package com.switchfully.curiosity.digibooky.api.dtomappers;
 
+import com.switchfully.curiosity.digibooky.api.dtos.CreateDtoUser;
 import com.switchfully.curiosity.digibooky.api.dtos.DtoUser;
-import com.switchfully.curiosity.digibooky.api.dtos.RegisterDtoUser;
 import com.switchfully.curiosity.digibooky.domain.entities.users.User;
 import org.springframework.stereotype.Component;
 
 @Component
 public class UserMapper {
 
-    public User changeRegisterDtoToUser(RegisterDtoUser registerDtoUser) {
+    public User changeCreateDtoUserToUser(CreateDtoUser createDtoUser) {
         return new User(
-                registerDtoUser.getINSS(),
-                registerDtoUser.getLastName(),
-                registerDtoUser.getFirstName(),
-                registerDtoUser.getEmail(),
-                registerDtoUser.getAddress()
+                createDtoUser.getINSS(),
+                createDtoUser.getLastName(),
+                createDtoUser.getFirstName(),
+                createDtoUser.getEmail(),
+                createDtoUser.getAddress()
         );
     }
 
-    public DtoUser changeUserToDto(User user) {
+    public DtoUser changeUserToDtoUser(User user) {
         //BUILDER SETTERS ON (FLUENT API)
         return new DtoUser()
                 .setId(user.getId())

@@ -1,8 +1,8 @@
 package com.switchfully.curiosity.digibooky.api.controllers;
 
 import com.switchfully.curiosity.digibooky.api.dtomappers.UserMapper;
+import com.switchfully.curiosity.digibooky.api.dtos.CreateDtoUser;
 import com.switchfully.curiosity.digibooky.api.dtos.DtoUser;
-import com.switchfully.curiosity.digibooky.api.dtos.RegisterDtoUser;
 import com.switchfully.curiosity.digibooky.domain.entities.users.User;
 import com.switchfully.curiosity.digibooky.service.UserService;
 import org.slf4j.Logger;
@@ -29,17 +29,17 @@ public class UserController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public DtoUser createUser(@RequestBody RegisterDtoUser registerDtoUser) {
+    public DtoUser createUser(@RequestBody CreateDtoUser createDtoUser) {
         LOGGER.info("Starting User Registration");
         //Create user
-        User userToRegister = userMapper.changeRegisterDtoToUser(registerDtoUser);
+        User userToRegister = userMapper.changeCreateDtoUserToUser(createDtoUser);
 
         //Call service to create user
         User createdUser = userService.createUser(userToRegister);
         LOGGER.info("Created user with ID: " + userToRegister.getId());
 
         //Returns a new user created
-        return userMapper.changeUserToDto(createdUser);
+        return userMapper.changeUserToDtoUser(createdUser);
     }
 }
 

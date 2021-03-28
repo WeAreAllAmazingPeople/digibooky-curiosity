@@ -33,6 +33,6 @@ public class LoanController {
     public DtoLoan loanBook(@RequestBody CreateDtoLoan createDtoLoan) {
         LOGGER.info("Creating a loan");
         Loan loan = loanService.lendBook(UUID.fromString(createDtoLoan.getUserId()), createDtoLoan.getBookIsbn());
-        return loanMapper.changeLoanToDto(loan);
+        return loanMapper.changeLoanToDtoLoan(loan);
     }
 }
