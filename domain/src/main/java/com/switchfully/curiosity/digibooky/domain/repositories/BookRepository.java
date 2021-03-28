@@ -11,4 +11,6 @@ public interface BookRepository {
     Book getBookById(UUID uuid);
 
     Book createBook(Book book);
+
+    Book updateBook(Book book);
 }

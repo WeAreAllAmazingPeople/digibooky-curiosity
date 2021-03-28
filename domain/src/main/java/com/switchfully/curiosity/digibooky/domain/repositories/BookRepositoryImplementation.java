@@ -32,4 +32,9 @@ public class BookRepositoryImplementation implements BookRepository {
     public Book createBook(Book book) {
         return database.createBook(book);
     }
+
+    @Override
+    public Book updateBook(Book book) {
+        return database.updateBook(book);
+    }
 }

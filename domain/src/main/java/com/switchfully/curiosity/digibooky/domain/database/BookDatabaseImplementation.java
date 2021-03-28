@@ -28,4 +28,10 @@ public class BookDatabaseImplementation implements BookDatabase {
         books.put(book.getId(), book);
         return books.get(book.getId());
     }
+
+    @Override
+    public Book updateBook(Book book) {
+        books.put(book.getId(),book);
+        return books.get(book.getId());
+    }
 }

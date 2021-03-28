@@ -28,9 +28,17 @@ public class LoanServiceImplementation implements LoanService {
 
     @Override
     public Loan lendBook(UUID userId, String isbn) {
-        User user = userRepository.getUserById(userId);
+        User user = getUserById(userId);
         Book book = getBookByIsbn(isbn);
-        return loanRepository.createLoan(new Loan(user, book));
+        book.lend();
+        Book updatedBook = bookRepository.updateBook(book);
+        return loanRepository.createLoan(new Loan(user, updatedBook));
+    }
+
+    private User getUserById(UUID userId){
+        User user = userRepository.getUserById(userId);
+        if (user == null) throw new IllegalArgumentException("Cannot find user by provided user id");
+        return user;
     }
 
     private Book getBookByIsbn(String isbn) {
