@@ -1,16 +1,13 @@
 package com.switchfully.curiosity.digibooky.api.dtos;
 
-import com.switchfully.curiosity.digibooky.domain.entities.books.Book;
-import com.switchfully.curiosity.digibooky.domain.entities.users.User;
-
 import java.time.LocalDate;
 import java.util.UUID;
 
 public class DtoLoan {
 
     private UUID id; //Id of transaction (loan)
-    private User user;
-    private Book book;
+    private DtoUser user;
+    private DtoBookWithSummary book;
     private LocalDate dueDate;
 
     public UUID getId() {
@@ -22,20 +19,20 @@ public class DtoLoan {
         return this;
     }
 
-    public User getUser() {
+    public DtoUser getUser() {
         return user;
     }
 
-    public DtoLoan setUser(User user) {
+    public DtoLoan setUser(DtoUser user) {
         this.user = user;
         return this;
     }
 
-    public Book getBook() {
+    public DtoBookWithSummary getBook() {
         return book;
     }
 
-    public DtoLoan setBook(Book book) {
+    public DtoLoan setBook(DtoBookWithSummary book) {
         this.book = book;
         return this;
     }

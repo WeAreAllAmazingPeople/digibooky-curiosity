@@ -37,7 +37,7 @@ public class BookMapper {
         LOGGER.info("Returned DtoBookWithSummary based on book");
         if (book == null) throw new IllegalArgumentException("No book was found");
         return new DtoBookWithSummary()
-                .setID(book.getId())
+                .setId(book.getId())
                 .setAuthor(book.getAuthor())
                 .setTitle(book.getTitle())
                 .setISBN(book.getISBN())

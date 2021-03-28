@@ -27,7 +27,7 @@ public class DtoBookWithSummary {
         return this;
     }
 
-    public DtoBookWithSummary setID(UUID id){
+    public DtoBookWithSummary setId(UUID id) {
         this.id = id;
         return this;
     }
@@ -35,10 +35,6 @@ public class DtoBookWithSummary {
     public DtoBookWithSummary setSummary(String summary) {
         this.summary = summary;
         return this;
-    }
-
-    public UUID getID() {
-        return this.id;
     }
 
     public String getSummary() {
@@ -52,4 +48,14 @@ public class DtoBookWithSummary {
     public String getTitle() {
         return title;
     }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+
 }

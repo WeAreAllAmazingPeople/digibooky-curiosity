@@ -33,7 +33,7 @@ class BookControllerTest {
         bookDatabase.createBook(testBook);
 
         DtoBookWithSummary dtoBookWithSummary = new DtoBookWithSummary()
-                .setID(UUID.fromString(BookId))
+                .setId(UUID.fromString(BookId))
                 .setISBN("isbn")
                 .setAuthor(author)
                 .setTitle("title")
