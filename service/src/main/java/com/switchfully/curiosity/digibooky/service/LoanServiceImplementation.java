@@ -27,7 +27,7 @@ public class LoanServiceImplementation implements LoanService {
     }
 
     @Override
-    public Loan lendBook(UUID userId, String isbn) {
+    public Loan createLoan(UUID userId, String isbn) {
         User user = getUserById(userId);
         Book book = getBookByIsbn(isbn);
         book.lend();

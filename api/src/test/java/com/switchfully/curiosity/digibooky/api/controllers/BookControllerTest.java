@@ -39,7 +39,7 @@ class BookControllerTest {
                 .setTitle("title")
                 .setSummary("summary");
 
-        DtoBookWithSummary getOneResult = bookController.getOneBook(BookId);
+        DtoBookWithSummary getOneResult = bookController.getBookById(BookId);
 
         assertThat(getOneResult.getSummary()).isEqualTo(dtoBookWithSummary.getSummary());
         assertThat(getOneResult.getTitle()).isEqualTo(dtoBookWithSummary.getTitle());

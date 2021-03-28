@@ -39,7 +39,7 @@ public class BookController {
 
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public DtoBookWithSummary getOneBook(@PathVariable("id") String id) {
+    public DtoBookWithSummary getBookById(@PathVariable("id") String id) {
         LOGGER.info("Getting one book with UUID " + id);
         UUID uuid = UUID.fromString(id);
         return bookMapper.changeBookToDtoBookWithSummary(bookService.getBookById(uuid));

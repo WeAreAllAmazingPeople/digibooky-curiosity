@@ -30,9 +30,9 @@ public class LoanController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public DtoLoan loanBook(@RequestBody CreateDtoLoan createDtoLoan) {
+    public DtoLoan createLoan(@RequestBody CreateDtoLoan createDtoLoan) {
         LOGGER.info("Creating a loan");
-        Loan loan = loanService.lendBook(UUID.fromString(createDtoLoan.getUserId()), createDtoLoan.getBookIsbn());
+        Loan loan = loanService.createLoan(UUID.fromString(createDtoLoan.getUserId()), createDtoLoan.getBookIsbn());
         return loanMapper.changeLoanToDtoLoan(loan);
     }
 }
