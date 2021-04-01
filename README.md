@@ -1,3 +1,5 @@
+⚠️Single-module edition of team Digibooky-Curiosity ⚠️
+
 # Digibooky - Team Curiosity
 
 Digibooky is going to revolutionize the classic libraries. Users will come to the VR offices where VR headsets are available. 
